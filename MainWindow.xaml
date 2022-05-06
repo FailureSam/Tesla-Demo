@@ -1,0 +1,184 @@
+﻿<Window
+    x:Class="Tesla_Demo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p="clr-namespace:Tesla_Demo.Properties"
+    xmlns:ViewModels="clr-namespace:Tesla_Demo.ViewModels"
+    x:Name="TeslaWindow"
+    Title="Tesla" Height="759" Width="677.5"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    AllowsTransparency="True" WindowStyle="None" FontFamily="Segoe UI Semibold" Loaded="TeslaWindow_Loaded" Closing="TeslaWindow_Closing">
+
+    <Window.DataContext>
+        <ViewModels:MainViewModel/>
+    </Window.DataContext>
+
+    <Window.Background>
+        <SolidColorBrush Opacity=".9" Color="White"/>
+    </Window.Background>
+
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,677.5,759" RadiusX="7" RadiusY="7"/>
+    </Window.Clip>
+
+    <Grid x:Name="Grid_main">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="191"/>
+            <ColumnDefinition Width="487*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="Login_Grid" Margin="0,0,0,632" Width="191" Background="#00000000">
+            <StackPanel  Style="{DynamicResource TeslaPanel}" x:Name="TopLeft_Panel" MouseDown="TopLeft_Panel_MouseDown" Width="191"/>
+            <Path Margin="11.207,10.104,165.84,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,0.35"  Fill="#7FA3A3A3" Stroke="#7FA3A3A3" x:Name="Exit" StrokeThickness="0" HorizontalAlignment="Center" Height="12.937" Stretch="Fill" Width="13.094" >
+                <Path.Data>
+                    <PathGeometry Figures="M16.7175 17.2825C16.327 17.673 16.327 18.3062 16.7175 18.6967L22.0208 24L16.7175 29.3033C16.327 29.6938 16.327 30.327 16.7175 30.7175L17.4246 31.4246C17.8151 31.8151 18.4483 31.8151 18.8388 31.4246L24.1421 26.1213L29.4454 31.4246C29.8359 31.8151 30.4692 31.8151 30.8596 31.4246L31.5668 30.7175C31.9573 30.327 31.9573 29.6938 31.5668 29.3033L26.2635 24L31.5668 18.6967C31.9573 18.3062 31.9573 17.673 31.5668 17.2825L30.8596 16.5754C30.4692 16.1849 29.8359 16.1849 29.4454 16.5754L24.1421 21.8787L18.8388 16.5754C18.4483 16.1849 17.8151 16.1849 17.4246 16.5754L16.7175 17.2825Z"/>
+                </Path.Data>
+            </Path>
+            <Button Style="{DynamicResource TeslaGlovebox}" Command="{Binding LoginViewCommand}" x:Name="Login_Button" Margin="57,86,57,0" VerticalAlignment="Top" Height="33" Background="White"/>
+            <TextBlock x:Name="Login_Text" Foreground="#FF838383" IsHitTestVisible="False" FontFamily="/Fonts/#SemiBold" FontStretch="Expanded" Canvas.Left="52" Canvas.Top="16" Margin="80,96,79,19" FontSize="10"><Run Text="About"/><LineBreak/><Run/></TextBlock>
+            <Button x:Name="Exit_Button" Margin="7.958,6.875,163.016,99.875" Height="Auto" Opacity="0" Click="Exit_Button_Click" MouseEnter="Exit_Button_MouseEnter" MouseLeave="Exit_Button_MouseLeave" Cursor="Arrow" Background="#FFC5C5C5" RenderTransformOrigin="0.501,0.506"/>
+            <Viewbox Margin="145,9,10,102" RenderTransformOrigin="0.5,0.5">
+                <ToggleButton x:Name="Theme_Control" Style="{DynamicResource TeslaStyle_Toggle}" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="Theme_Control_Checked" Unchecked="Theme_Control_Unchecked" Height="40" Width="78" Opacity="0.9"/>
+            </Viewbox>
+            <Path Style="{DynamicResource ThemeControl_Invert_Tesla_Path}" IsHitTestVisible="False" x:Name="Tesla_Name" StrokeThickness=".1" Height="18.469" Stretch="Fill" Width="107.949" Margin="40.622,45.415,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Path.Effect>
+                    <DropShadowEffect ShadowDepth="1" Color="#FFC6C6C6"/>
+                </Path.Effect>
+                <Path.Data>
+                    <PathGeometry Figures="M 112.501 62.5 L 100.001 62.5 L 100.001 12.5 L 87.501 0 L 106.251 0 L 150.001 43.75 L 150.001 0 L 162.501 0 L 162.501 62.5 L 150.001 62.5 L 112.501 25 L 112.501 62.5 Z M 250.001 62.5 L 187.501 62.5 Q 182.228 62.5 178.615 58.887 A 12.289 12.289 0 0 1 175.001 50 L 175.001 25 L 187.501 25 L 187.501 43.75 A 6.294 6.294 0 0 0 189.259 48.242 A 6.294 6.294 0 0 0 193.751 50 L 237.501 50 L 237.501 37.5 L 212.501 37.5 Q 207.228 37.5 203.615 33.887 A 12.289 12.289 0 0 1 200.001 25 L 250.001 25 L 250.001 62.5 Z M 237.501 12.5 L 175.001 12.5 L 175.001 0 L 250.001 0 A 12.311 12.311 0 0 1 248.827 5.407 A 12.271 12.271 0 0 1 246.29 8.887 A 12.174 12.174 0 0 1 237.501 12.5 Z M 62.501 62.5 L 12.501 62.5 Q 7.228 62.5 3.615 58.887 A 12.289 12.289 0 0 1 0.001 50 L 75.001 50 A 12.311 12.311 0 0 1 73.827 55.407 A 12.271 12.271 0 0 1 71.29 58.887 A 12.174 12.174 0 0 1 62.501 62.5 Z M 62.501 37.5 L 12.501 37.5 Q 7.228 37.5 3.615 33.887 A 12.289 12.289 0 0 1 0.001 25 L 75.001 25 A 12.311 12.311 0 0 1 73.827 30.407 A 12.271 12.271 0 0 1 71.29 33.887 A 12.174 12.174 0 0 1 62.501 37.5 Z M 62.501 12.5 L 12.501 12.5 Q 7.228 12.5 3.615 8.887 A 12.289 12.289 0 0 1 0.001 0 L 75.001 0 A 12.311 12.311 0 0 1 73.827 5.407 A 12.271 12.271 0 0 1 71.29 8.887 A 12.174 12.174 0 0 1 62.501 12.5 Z M 300.001 62.5 L 262.501 62.5 L 262.501 50 L 275.001 50 L 275.001 25 L 287.501 25 L 287.501 50 A 11.784 11.784 0 0 1 296.12 53.539 A 14.317 14.317 0 0 1 296.29 53.711 A 12.627 12.627 0 0 1 299.185 58.037 A 12.111 12.111 0 0 1 300.001 62.5 Z M 387.501 62.5 L 350.001 62.5 L 350.001 50 L 362.501 50 L 362.501 25 L 375.001 25 L 375.001 50 A 11.784 11.784 0 0 1 383.62 53.539 A 14.317 14.317 0 0 1 383.79 53.711 A 12.627 12.627 0 0 1 386.685 58.037 A 12.111 12.111 0 0 1 387.501 62.5 Z M 475.001 62.5 L 437.501 62.5 L 437.501 50 L 450.001 50 L 450.001 25 L 462.501 25 L 462.501 50 A 11.784 11.784 0 0 1 471.12 53.539 A 14.317 14.317 0 0 1 471.29 53.711 A 12.627 12.627 0 0 1 474.185 58.037 A 12.111 12.111 0 0 1 475.001 62.5 Z M 287.501 12.5 L 275.001 12.5 Q 269.728 12.5 266.115 8.887 A 12.289 12.289 0 0 1 262.501 0 L 287.501 0 L 287.501 12.5 Z M 375.001 12.5 L 362.501 12.5 Q 357.228 12.5 353.615 8.887 A 12.289 12.289 0 0 1 350.001 0 L 375.001 0 L 375.001 12.5 Z M 462.501 12.5 L 450.001 12.5 Q 444.728 12.5 441.115 8.887 A 12.289 12.289 0 0 1 437.501 0 L 462.501 0 L 462.501 12.5 Z"/>
+                </Path.Data>
+            </Path>
+            <Button Style="{DynamicResource LookAtMe}" x:Name="EasterEgg" HorizontalAlignment="Left" Margin="7,109,0,0" VerticalAlignment="Top" Width="11" Height="12" Opacity="0" Cursor="Arrow"/>
+        </Grid>
+
+        <Grid x:Name="ListView_Grid" Margin="0,127,0,125" Width="191">
+            <StackPanel Style="{DynamicResource TeslaPanel}" x:Name="Left_Panel" Height="507" VerticalAlignment="Top" >
+                <RadioButton x:Name="Introduction_Button"
+                             Style="{DynamicResource TeslaPanelToggleButton}"
+                             Command="{Binding QuickControlsViewCommand}" 
+                             BorderThickness="0" Cursor="Arrow" Padding="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" UseLayoutRounding="False" HorizontalContentAlignment="Center" Height="45" Width="191" BorderBrush="{x:Null}"
+                             RenderTransformOrigin="0.5,0.5">
+                </RadioButton>
+                <RadioButton x:Name="LightsPanel_Button" Background="{x:Null}"
+                                    Style="{DynamicResource TeslaPanelToggleButton}"
+                                    Command="{Binding LightsViewCommand}"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" BorderThickness="0" Height="45" Width="191" BorderBrush="{x:Null}" Cursor="Arrow" Padding="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" UseLayoutRounding="False" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                </RadioButton>
+                <RadioButton x:Name="SafetyPanel_Button" Background="{x:Null}"
+                             Style="{DynamicResource TeslaPanelToggleButton}"
+                                    Command="{Binding SafetyViewCommand}"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" BorderThickness="0" Height="45" Width="191" BorderBrush="{x:Null}" Cursor="Arrow" Padding="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" UseLayoutRounding="False" HorizontalContentAlignment="Center"/>
+                <RadioButton x:Name="DesignPanel_Button" Style="{DynamicResource TeslaPanelToggleButton}" 
+                             Command="{Binding DisplayViewCommand}"
+                             BorderThickness="0" Cursor="Arrow" Padding="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" UseLayoutRounding="False" HorizontalContentAlignment="Center" Height="45" Width="191" Background="{x:Null}" BorderBrush="{x:Null}">
+                </RadioButton>
+                    <Canvas x:Name="QuickControls_Canvas" Width="191" Height="45" RenderTransformOrigin="0.5,0.5">
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-180"/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                    <Path IsHitTestVisible="False" x:Name="QuickControl_Icon" Fill="#FF838383" Data="M18 16H30C33.866 16 37 19.134 37 23V25C37 28.866 33.866 32 30 32H18C14.134 32 11 28.866 11 25V23C11 19.134 14.134 16 18 16ZM8 23C8 17.4772 12.4772 13 18 13H30C35.5228 13 40 17.4772 40 23V25C40 30.5228 35.5228 35 30 35H18C12.4772 35 8 30.5228 8 25V23ZM25 19C22.2386 19 20 21.2386 20 24C20 26.7614 22.2386 29 25 29H28C30.7614 29 33 26.7614 33 24C33 21.2386 30.7614 19 28 19H25Z" Height="13.167" Stretch="Fill" Width="20.084" Canvas.Left="16.833" Canvas.Top="16" StrokeThickness="0"/>
+                    <TextBlock x:Name="Introduction_Text" Foreground="#FF838383" IsHitTestVisible="False" FontFamily="/Fonts/#SemiBold" FontStretch="Expanded" Text="Introduction" Canvas.Left="52" Canvas.Top="16" Width="78" Height="14"/>
+                </Canvas>
+                <Canvas x:Name="LightPaths_Canvas" Height="45" Width="191" RenderTransformOrigin="0.5,0.5">
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-180"/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                    <Path x:Name="Lights_Icon" Fill="#FF838383" Height="20.218" Canvas.Left="17" Stretch="Fill" Canvas.Top="12.5" Width="18.04" RenderTransformOrigin="0.519,0.423" StrokeThickness="0" StrokeLineJoin="Round" Data="m 39.56466 -27.034161 h 1.331825 c 0.592563 0 1.069608 0.426271 1.069608 0.955764 v 0.111255 c 0 0.529493 -0.477045 0.955764 -1.069608 0.955764 H 39.56466 c -0.592563 0 -1.069608 -0.426271 -1.069608 -0.955764 v -0.111255 c 0 -0.529493 0.477045 -0.955764 1.069608 -0.955764 z m -3.409558 -9.096668 1.153395 -0.665913 c 0.513174 -0.296281 1.139443 -0.165642 1.404189 0.292912 l 0.05563 0.09635 c 0.264746 0.458554 0.06475 1.066238 -0.448425 1.362519 l -1.153395 0.665913 c -0.513174 0.296281 -1.139443 0.165642 -1.404189 -0.292912 l -0.05563 -0.09635 c -0.264746 -0.458554 -0.06475 -1.066238 0.448425 -1.362519 z m 3.657652 18.263224 1.153395 0.665913 c 0.513174 0.296281 0.713172 0.903965 0.448425 1.362519 l -0.05563 0.09635 c -0.264747 0.458555 -0.891016 0.589194 -1.404189 0.292913 l -1.153395 -0.665913 c -0.513174 -0.296281 -0.713172 -0.903965 -0.448425 -1.36252 l 0.05563 -0.09635 c 0.264747 -0.458554 0.891015 -0.589193 1.404189 -0.292912 z m -30.571176 -19.294279 1.153395 0.665913 c 0.513174 0.296281 0.713172 0.903965 0.448425 1.362519 l -0.05563 0.09635 c -0.264747 0.458554 -0.8910154 0.589193 -1.4041895 0.292912 l -1.153395 -0.665913 c -0.5131738 -0.296281 -0.7131714 -0.903965 -0.4484249 -1.362519 l 0.055627 -0.09635 c 0.2647465 -0.458554 0.8910151 -0.589193 1.4041889 -0.292912 z m -3.2316898 9.500906 h 1.3318257 c 0.5925624 0 1.0696073 0.42627 1.0696073 0.955763 v 0.111255 c 0 0.529494 -0.4770449 0.955764 -1.0696073 0.955764 H 6.0098882 c -0.5925624 0 -1.0696073 -0.42627 -1.0696073 -0.955764 v -0.111255 c 0 -0.529493 0.4770449 -0.955763 1.0696073 -0.955763 z m 0.083008 9.595921 1.1533951 -0.665913 c 0.5131738 -0.296281 1.1394424 -0.165642 1.4041889 0.292913 l 0.055627 0.09635 c 0.2647465 0.458555 0.064749 1.066239 -0.4484249 1.36252 l -1.1533951 0.665913 c -0.5131737 0.296281 -1.1394423 0.165642 -1.4041888 -0.292913 l -0.055627 -0.09635 c -0.2647465 -0.458555 -0.064749 -1.066239 0.4484248 -1.36252 z M 32.841764 -7.0364981 32.175851 -8.1898934 C 31.87957 -8.7030675 32.010208 -9.3293355 32.468762 -9.594082 l 0.09635 -0.055627 c 0.458554 -0.2647465 1.066238 -0.064749 1.362519 0.4484251 l 0.665914 1.1533953 c 0.296281 0.5131738 0.165642 1.1394424 -0.292913 1.4041889 l -0.09635 0.055627 c -0.458554 0.2647465 -1.066237 0.064748 -1.362518 -0.4484254 z m -21.368015 -1.7518256 0.665913 -1.1533951 c 0.296281 -0.5131742 0.903964 -0.7131712 1.362519 -0.4484252 l 0.09635 0.05563 c 0.458554 0.264746 0.589193 0.8910138 0.292912 1.4041884 l -0.665913 1.1533952 c -0.296281 0.5131737 -0.903965 0.7131715 -1.362519 0.4484249 l -0.09635 -0.055627 c -0.458555 -0.2647466 -0.589193 -0.891015 -0.292912 -1.4041888 z M 16 -23 c 0 4.4185 3.5815 8 8 8 4.4185 0 8 -3.5815 8 -8 0 -0.3755 -0.1655 -1.2583 -0.689 -2.6738 -0.5029 -1.3692 -1.1567 -2.7676 -1.8755 -4.1763 C 28.8262 -31.0479 28.229 -32.1255 27.7266 -33 h -7.4532 c -0.5024 0.8745 -1.0996 1.9521 -1.7089 3.1499 -0.7188 1.4087 -1.3726 2.8071 -1.8755 4.1763 C 16.1655 -24.2583 16 -23.3755 16 -23 Z m 18.985079 0.07807 c 0 -4.4419 -5.615493 -13.342588 -5.615493 -13.342588 H 18.840552 c 0 0 -5.894931 8.822617 -5.894931 13.264517 0 6.6274 4.426979 10.94931 11.054379 10.94931 6.6274 0 10.985079 -4.243839 10.985079 -10.871239 z M 18.704161 -38.783722 v -0.898698 c 0 -1.1362 0.293548 -1.096969 1.309648 -1.605269 l 1.332588 -0.745657 c 0.5556 -0.2779 0.877888 -0.883551 1.498982 -0.886237 l 2.46638 -0.01067 c 0.621094 -0.0027 1.076572 0.778892 1.632172 1.056792 l 1.235563 0.823243 c 0.952085 0.636329 1.380162 0.394613 1.366605 1.530733 l -0.01455 1.219375 c -0.0066 0.552161 -0.460378 0.584441 -1.012563 0.580402 l -8.750807 -0.06401 c -0.552185 -0.004 -1.064004 -0.249958 -1.064015 -0.802158 z m 3.697094 33.6069723 v -1.3318257 c 0 -0.5925625 0.42627 -1.0696073 0.955763 -1.0696073 h 0.111255 c 0.529494 0 0.955764 0.4770448 0.955764 1.0696073 v 1.3318257 c 0 0.5925624 -0.42627 1.0696073 -0.955764 1.0696073 h -0.111255 c -0.529493 0 -0.955763 -0.4770449 -0.955763 -1.0696073 z"/>
+                    <TextBlock x:Name="Lights_Text" Foreground="#FF838383" IsHitTestVisible="False" FontFamily="/Fonts/#SemiBold" FontStretch="Expanded" Text="Self Driving" Canvas.Left="52" Canvas.Top="16" Width="73" Height="14"/>
+                </Canvas>
+                <Canvas x:Name="LocksPath_Canvas" Height="45" Width="191" RenderTransformOrigin="0.5,0.5">
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-180"/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                    <Path x:Name="Lock_Icon" Fill="#FF838383" Data="M19 22H29V18C29 15.2386 26.7614 13 24 13C21.2386 13 19 15.2386 19 18V22ZM32 22C33.1046 22 34 22.8954 34 24V36C34 37.1046 33.1046 38 32 38H16C14.8954 38 14 37.1046 14 36V24C14 22.8954 14.8954 22 16 22V18C16 13.5817 19.5817 10 24 10C28.4183 10 32 13.5817 32 18V22Z" Height="17.001" Stretch="Fill" Width="13.334" Canvas.Left="19.75" Canvas.Top="14" StrokeThickness="0"/>
+                    <TextBlock x:Name="Lock_Text" Foreground="#FF838383" IsHitTestVisible="False" FontFamily="/Fonts/#SemiBold" FontStretch="Expanded" Text="Safety" Canvas.Left="52" Canvas.Top="16" Width="40" Height="14"/>
+                </Canvas>
+                <Canvas x:Name="LocksPathr_Canvas" Height="45" Width="191" RenderTransformOrigin="0.5,0.5">
+                    <Canvas.RenderTransform>
+                        <TranslateTransform Y="-180"/>
+                    </Canvas.RenderTransform>
+                    <Path Canvas.Left="17.5" Canvas.Top="15.458" Width="18.5" Height="13.834" x:Name="Display_Icon" StrokeThickness="1.7" Stroke="#FF838383"  Stretch="Fill" RenderTransformOrigin="0.5,0.5" StrokeMiterLimit="4" StrokeLineJoin="Round" Data="m 23.650902 27.248949 c -0.362223 0.363269 0 0 -0.362223 0.363269 0.362223 -0.363269 0 0 0.362223 -0.363269 z m 8.072416 -7.622117 c -6.328065 6.012352 0 0 -6.328065 6.012352 6.328065 -6.012352 0 0 6.328065 -6.012352 z m -14.062932 -2.946029 14.546582 -1e-6 c 1.235775 1e-6 2.230642 1.111317 2.230642 2.491742 v 8.208693 c 0 1.380425 -0.994867 2.491742 -2.230642 2.491742 H 17.660386 c -1.235776 0 -2.230642 -1.111317 -2.230642 -2.491741 v -8.208694 c 0 -1.380425 0.994866 -2.491741 2.230642 -2.491741 z" />
+                    <TextBlock x:Name="Display_Text" Text="Design" Foreground="#FF838383" IsHitTestVisible="False" FontFamily="/Fonts/#SemiBold" FontStretch="Expanded" Canvas.Left="52" Canvas.Top="16" Width="44" Height="14" FontWeight="Bold"/>
+                </Canvas>
+            </StackPanel>
+        </Grid>
+
+        <Grid  x:Name="GloveBox_Grid" Margin="0,634,0,0" Background="#00000000">
+            <StackPanel Style="{DynamicResource TeslaPanel}" x:Name="BottomLeft_Panel" Width="191">
+                <Button x:Name="Tips_Button" Style="{DynamicResource TeslaGlovebox}" Margin="33,63,33,32" Height="33" Click="Tips_Button_Click" />
+                <Canvas x:Name="Tips_InnerButton_Canvas" Height="32" Width="92" HorizontalAlignment="Center" Margin="0,-97,0,0">
+                    <TextBlock x:Name="Tip_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="/Fonts/#SemiBold" FontStretch="Expanded" Canvas.Left="36" Canvas.Top="10" FontSize="10" Height="12"><Run Text="Tips"/><LineBreak/><Run/></TextBlock>
+                    <Path IsHitTestVisible="False" x:Name="GloveBox_Path" Style="{DynamicResource ThemeControl_Invert_Path}" Data="M36 11H12C11.4478 11 11 11.4477 11 12V16.126C11.3198 16.0438 11.6548 16 12 16H36C36.3452 16 36.6802 16.0438 37 16.126V12C37 11.4477 36.5522 11 36 11ZM11 26V20C11 19.4477 11.4478 19 12 19H36C36.5522 19 37 19.4477 37 20V26C37 26.5523 36.5522 27 36 27H12C11.4478 27 11 26.5523 11 26ZM8 12V20V26C8 28.2092 9.79102 30 12 30H36C38.209 30 40 28.2092 40 26V20V12C40 9.79083 38.209 8 36 8H12C9.79102 8 8 9.79083 8 12ZM18.9604 34.8477C18.3237 34.3173 17.3779 34.4033 16.8477 35.0397C16.3174 35.6761 16.4033 36.622 17.0396 37.1523L23.0396 42.1523C23.5962 42.6159 24.4038 42.6159 24.9604 42.1523L30.9604 37.1523C31.5967 36.622 31.6826 35.6761 31.1523 35.0397C30.6221 34.4033 29.6763 34.3173 29.0396 34.8477L24 39.0474L18.9604 34.8477Z" Height="13.667" Canvas.Left="-6.375" Stretch="Fill" Canvas.Top="10.375" Width="12.635" StrokeThickness="0"/>
+                </Canvas>
+            </StackPanel>
+        </Grid>
+        <Border Style="{DynamicResource ThemeControl_Border}" ClipToBounds="True" BorderThickness="0,0,1,0" Margin="181,0,0,0">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="3" Color="#7F868686" BlurRadius="9"/>
+            </Border.Effect>
+        </Border>
+
+        <Grid Style="{DynamicResource ThemeControl_Grid}" Grid.Column="1" HorizontalAlignment="Right" Width="487">
+            <ContentControl Content="{Binding SelectedView}" x:Name="CurrentView_Control"  HorizontalAlignment="Left" Width="487" Margin="0,48,0,0" />
+            <StackPanel  x:Name="StatusFrame" Margin="0,0,0,709">
+                <StackPanel.Effect>
+                    <DropShadowEffect Direction="325" ShadowDepth="3" Color="#FF6B6B6B" Opacity="0.1"/>
+                </StackPanel.Effect>
+                <Border x:Name="InfoBar" Style="{DynamicResource ThemeControl_StatusBar_Border}" CornerRadius="0,0,20,20" Margin="0,0,0,715" Grid.Column="1" Height="44" MouseDown="InfoBar_MouseDown">
+                    <Canvas Height="44">
+                        <Canvas x:Name="AutoPilot_Status_Canvas" Height="44" Width="44">
+                            <Path x:Name="AutoPilot_Status_Path" Data="M39 24C39 32.2843 32.2843 39 24 39C15.7157 39 9 32.2843 9 24C9 15.7157 15.7157 9 24 9C32.2843 9 39 15.7157 39 24ZM11.8972 26.0466C18.5166 26.1372 21.5814 31.5185 21.9223 36.0976C16.7988 35.2239 12.758 31.1745 11.8972 26.0466ZM11.8022 22.6364H14.7955C15.9695 22.6364 16.9541 22.2573 18.0755 21.8255C19.559 21.2543 21.2819 20.5909 24 20.5909C26.7181 20.5909 28.441 21.2543 29.9245 21.8255C31.0459 22.2573 32.0305 22.6364 33.2045 22.6364H36.1978C35.5195 16.5001 30.3171 11.7273 24 11.7273C17.6829 11.7273 12.4805 16.5001 11.8022 22.6364ZM26.0777 36.0976C26.4186 31.5185 29.4834 26.1372 36.1028 26.0466C35.242 31.1745 31.2012 35.2239 26.0777 36.0976Z" Height="22.165" Canvas.Left="11.167" Stretch="Fill" Canvas.Top="11" Width="22.165">
+                                <Path.Fill>
+                                    <SolidColorBrush Color="#7FAAAAAA"/>
+                                </Path.Fill>
+                            </Path>
+                        </Canvas>
+                        <Canvas x:Name="Battery_Status_Canvas" Height="44" Width="44" Canvas.Left="50">
+                            <Viewbox Height="30" Width="44" Canvas.Top="7">
+                                <Canvas Name="BatteryStatus_Canvas" Width="44" Height="23">
+                                    <Canvas Height="17" Width="44" Canvas.Top="3">
+                                        <Rectangle Canvas.Left="3" Width="35" Height="15" RadiusX="2.7655268" RadiusY="2.9281747" Name="Battery_Outer_Rectangle" Fill="#66AAAAAA" StrokeThickness="0.504861" StrokeLineJoin="Round" Canvas.Top="1"/>
+                                        <ProgressBar x:Name="BatteryProgress" Value="100" Style="{DynamicResource BatteryProgress}" Height="15" Width="36" Canvas.Left="2" Canvas.Top="1" />
+                                        <TextBlock Text="null" x:Name="BatteryPercent_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" IsHitTestVisible="False" FontFamily="/Fonts/#SemiBold" FontStretch="Expanded" Canvas.Left="5" Canvas.Top="4" FontSize="7" Height="9" Width="30" Opacity="0.65" />
+                                        <Rectangle Canvas.Left="39" Width="2" Height="7" RadiusX="0.89" RadiusY="0.89" Name="rect837" Fill="#66AAAAAA" StrokeThickness="0.497976" StrokeLineJoin="Round" Canvas.Top="6" />
+                                    </Canvas>
+                                </Canvas>
+                            </Viewbox>
+                        </Canvas>
+                    </Canvas>
+                </Border>
+            </StackPanel>
+        </Grid>
+        
+        <Grid x:Name="Tip_PopUp" Visibility="Hidden" Background="#7F141414" Grid.ColumnSpan="2" Margin="0,0,-0.5,0">
+            <Rectangle Style="{DynamicResource ThemeControl_Element_Rectangle}" Canvas.Left="56" Canvas.Top="8" RadiusX="25" RadiusY="25" x:Name="Safe_PopUp_Rect" Margin="128,76,128,75"/>
+            <Image IsHitTestVisible="False" Source="/Resources/doge.png" Margin="233,428,255,133" />
+            <Button x:Name="Tip_Close_Button" Style="{DynamicResource TeslaButtonBlue}" Margin="218,596,219,111" Click="Tip_Close_Button_Click" />
+            <Image IsHitTestVisible="False" Margin="235,129,235,421" Source="Resources/address.png" />
+            <TextBlock x:Name="DogeAddress_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" TextAlignment="Center" FontFamily="Montserrat" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="15" Canvas.Left="64" Canvas.Top="386" Margin="190,358,190,384" Text="DKLvFnARpftiUsevkLrUC23ZNT85HdoEHe" />
+            <TextBox Style="{DynamicResource ThemeControl_Invert_TextBox}" FontSize="15"
+                BorderThickness="0"
+                Text="DKLvFnARpftiUsevkLrUC23ZNT85HdoEHe"
+                IsReadOnly="True"
+                TextWrapping="Wrap" Margin="195,355,193,381" />
+            <TextBlock x:Name="CloseTip_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" TextAlignment="Center" FontFamily="Montserrat" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="18" Canvas.Left="64" Canvas.Top="386" Margin="272,611,271,125" Text="Close Tips Jar" />
+        </Grid>
+        
+    </Grid>
+</Window>

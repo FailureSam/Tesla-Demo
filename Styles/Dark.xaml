@@ -1,0 +1,778 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- primary -->
+    <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#1e90ff"/>
+    <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="White"/>
+    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="DodgerBlue"/>
+    <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="DodgerBlue"/>
+    <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="#FFFFFF"/>
+    <!-- accent -->
+    <SolidColorBrush x:Key="SecondaryAccentBrush" Color="DodgerBlue"/>
+    <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="#FFFFFF"/>
+
+
+    <Style x:Name="ThemeControl_Invert_Rectangle" x:Key="ThemeControl_Invert_Rectangle" TargetType="Rectangle">
+        <Setter Property="Fill" Value="White"/>
+        <Setter Property="Stroke" Value="White"/>
+    </Style>
+
+    <Style x:Name="ThemeControl_Invert_TextBlock" x:Key="ThemeControl_Invert_TextBlock" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Name="ThemeControl_Invert_TextBox" x:Key="ThemeControl_Invert_TextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
+    <Style x:Name="ThemeControl_Invert_LoginTextBlock" x:Key="ThemeControl_Invert_LoginTextBlock" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#c9c9c9"/>
+    </Style>
+
+    <Style x:Name="ThemeControl_Slider_Border" x:Key="ThemeControl_Slider_Border" TargetType="Border">
+        <Setter Property="Background" Value="#66F5F5F5"/>
+        <Setter Property="Rectangle.Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="Black" Direction="0" ShadowDepth="0" BlurRadius="50" Opacity="0" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Name="ThemeControl_Element_Rectangle" x:Key="ThemeControl_Element_Rectangle" TargetType="Rectangle">
+        <Setter Property="Fill" Value="#FF242424"/>
+    </Style>
+
+    <Style x:Name="ThemeControl_Grid" x:Key="ThemeControl_Grid" TargetType="Grid">
+        <Setter Property="Background" Value="#090909"/>
+    </Style>
+
+    <Style x:Name="ThemeControl_Card_Border" x:Key="ThemeControl_Card_Border" TargetType="Border">
+        <Setter Property="Background" Value="#FF242424"/>
+    </Style>
+
+    <Style x:Name="ThemeControl_Border" x:Key="ThemeControl_Border" TargetType="Border">
+        <Setter Property="BorderBrush" Value="#090909"/>
+    </Style>
+
+    <Style x:Name="ThemeControl_StatusBar_Border" x:Key="ThemeControl_StatusBar_Border" TargetType="Border">
+        <Setter Property="Background" Value="#FF161616"/>
+    </Style>
+
+    <Style x:Name="ThemeControl_StatusBar_StackPanel" x:Key="ThemeControl_StatusBar_StackPanel" TargetType="StackPanel">
+        <Setter Property="Background" Value="#FF161616"/>
+    </Style>
+
+    <Style x:Name="ThemeControl_Invert_Path" x:Key="ThemeControl_Invert_Path" TargetType="{x:Type Path}">
+        <Setter Property="Path.Fill" Value="White" />
+        <Setter Property="Path.Stroke" Value="White"/>
+        <Setter Property="StrokeThickness" Value="0"/>
+    </Style>
+
+    <Style x:Name="ThemeControl_Invert_Tesla_Path" x:Key="ThemeControl_Invert_Tesla_Path" TargetType="{x:Type Path}">
+        <Setter Property="Path.Fill" Value="#FFEBEBEB" />
+        <Setter Property="Path.Stroke" Value="White" />
+    </Style>
+
+    <Style x:Name="TeslaPanel" x:Key="TeslaPanel" TargetType="StackPanel">
+        <Setter Property="Background" Value="#E5000000" />
+    </Style>
+
+    <Style x:Key="TeslaStyle_Toggle" x:Name="TeslaStyle_Toggle" TargetType="{x:Type ToggleButton}">
+        <Setter x:Name="TeslaStyle_Toggle_Setter" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="TeslaStyle_Toggle_ControlTemplate" TargetType="{x:Type ToggleButton}">
+                    <Canvas Name="TeslaStyle_Toggle_Canvas" Width="105" Height="50">
+                        <Canvas Name="TeslaStyle_Toggle_Rectangle_Canvas" Height="37" Width="55">
+                            <Border Width="75" Height="39" CornerRadius="20" Name="TeslaStyle_Toggle_Rectangle" Background="#FF353535" />
+                            <Path Style="{DynamicResource ThemeControl_Invert_Path}" IsHitTestVisible="False" x:Name="Sun" StrokeThickness=".1" Height="18" Stretch="Fill" Width="18" VerticalAlignment="Center" HorizontalAlignment="Center" Canvas.Left="10" Canvas.Top="11">
+                                <Path.Data>
+                                    <PathGeometry Figures="M25.5 11C25.5 10.1714 24.8284 9.5 24 9.5C23.1716 9.5 22.5 10.1714 22.5 11V15C22.5 15.8286 23.1716 16.5 24 16.5C24.8284 16.5 25.5 15.8286 25.5 15V11ZM15.8682 13.7471C15.2825 13.1611 14.3328 13.1611 13.7471 13.7471C13.1611 14.3325 13.1611 15.2827 13.7471 15.8682L16.5754 18.6968C17.1611 19.2827 18.1108 19.2827 18.6968 18.6968C19.2825 18.1108 19.2825 17.1611 18.6968 16.5752L15.8682 13.7471ZM34.2532 15.8682C34.8389 15.2827 34.8389 14.3325 34.2532 13.7471C33.6672 13.1611 32.7175 13.1611 32.1318 13.7471L29.3032 16.5752C28.7175 17.1611 28.7175 18.1108 29.3032 18.6968C29.8892 19.2827 30.8389 19.2827 31.4246 18.6968L34.2532 15.8682ZM11 22.5C10.1716 22.5 9.5 23.1714 9.5 24C9.5 24.8286 10.1716 25.5 11 25.5H15C15.8284 25.5 16.5 24.8286 16.5 24C16.5 23.1714 15.8284 22.5 15 22.5H11ZM33 22.5C32.1716 22.5 31.5 23.1714 31.5 24C31.5 24.8286 32.1716 25.5 33 25.5H37C37.8284 25.5 38.5 24.8286 38.5 24C38.5 23.1714 37.8284 22.5 37 22.5H33ZM18.6968 31.4248C19.2825 30.8389 19.2825 29.8892 18.6968 29.3032C18.1108 28.7173 17.1611 28.7173 16.5754 29.3032L13.7471 32.1318C13.1611 32.7173 13.1611 33.6675 13.7471 34.2529C14.3328 34.8389 15.2825 34.8389 15.8682 34.2529L18.6968 31.4248ZM31.4246 29.3032C30.8389 28.7173 29.8892 28.7173 29.3032 29.3032C28.7175 29.8892 28.7175 30.8389 29.3032 31.4248L32.1318 34.2529C32.7175 34.8389 33.6672 34.8389 34.2532 34.2529C34.8389 33.6675 34.8389 32.7173 34.2532 32.1318L31.4246 29.3032ZM25.5 33C25.5 32.1714 24.8284 31.5 24 31.5C23.1716 31.5 22.5 32.1714 22.5 33V37C22.5 37.8286 23.1716 38.5 24 38.5C24.8284 38.5 25.5 37.8286 25.5 37V33ZM27 24C27 25.6567 25.6567 27 24 27C22.3433 27 21 25.6567 21 24C21 22.3433 22.3433 21 24 21C25.6567 21 27 22.3433 27 24ZM30 24C30 27.3135 27.3137 30 24 30C20.6863 30 18 27.3135 18 24C18 20.6865 20.6863 18 24 18C27.3137 18 30 20.6865 30 24Z"/>
+                                </Path.Data>
+                            </Path>
+                            <Path Style="{DynamicResource ThemeControl_Invert_Path}" IsHitTestVisible="False" x:Name="Moon" StrokeThickness=".1" Height="16" Stretch="Fill" Width="16" VerticalAlignment="Center" HorizontalAlignment="Center" Canvas.Left="50" Canvas.Top="12">
+                                <Path.Data>
+                                    <PathGeometry Figures="M 87.823 60.7 C 87.36 60.277 86.681 60.194 86.128 60.486 70.294 68.884 50.862 63.298 41.896 47.768 32.93 32.238 37.806 12.619 52.997 3.103 53.528 2.771 53.793 2.14 53.658 1.529 53.524 0.917 53.02 0.455 52.399 0.376 42.556 -0.889 32.809 1.068 24.206 6.036 13.8 12.041 6.356 21.743 3.246 33.35 0.136 44.957 1.732 57.08 7.741 67.487 13.749 77.894 23.45 85.338 35.057 88.448 38.933 89.486 42.866 90 46.774 90 c 7.795 0 15.489 -2.044 22.42 -6.046 8.601 -4.966 15.171 -12.43 18.997 -21.586 0.242 -0.578 0.094 -1.245 -0.368 -1.668 z"/>
+                                </Path.Data>
+                            </Path>
+                            <Canvas Name="Ball_Canvas" Canvas.Left="4" Height="41" Width="39">
+                                <Border Canvas.Top="3.5" Width="32" Height="32" CornerRadius="20" x:Name="TeslaStyle_Dark_BallSlide" Background="White">
+                                    <Border.RenderTransform>
+                                        <TranslateTransform x:Name="TeslaStyle_Dark_BallSlide_Transform"/>
+                                    </Border.RenderTransform>
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="1.2" BlurRadius="12" Color="#996D6D6D"/>
+                                    </Border.Effect>
+                                </Border>
+                            </Canvas>
+                        </Canvas>
+                    </Canvas>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger x:Name="TeslaStyle_ToggleChecked_EventTrigger" RoutedEvent="Checked">
+                            <BeginStoryboard x:Name="TeslaStyle_ToggleChecked_BeginStoryBoard">
+                                <Storyboard x:Name="TeslaStyle_ToggleChecked_StoryBoard">
+                                    <DoubleAnimation x:Name="TeslaStyleChecked" Storyboard.TargetName="TeslaStyle_Dark_BallSlide"
+                                                        Storyboard.TargetProperty="RenderTransform.X"
+                                                        To="35"
+                                                        Duration="0:0:0.3" >
+                                        <DoubleAnimation.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut"/>
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                    <ColorAnimation x:Name="TeslaStyle_ToggleChecked_ColorAnimation" Storyboard.TargetName="TeslaStyle_Toggle_Rectangle"
+                                                    Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
+                                                    To="DodgerBlue"
+                                                    Duration="0:0:0.16" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger x:Name="TeslaStyle_ToggleUnchecked_EventTrigger" RoutedEvent="Unchecked">
+                            <BeginStoryboard x:Name="TeslaStyle_ToggleUnChecked_BeginStoryBoard">
+                                <Storyboard x:Name="TeslaStyle_ToggleUnChecked_StoryBoard">
+                                    <DoubleAnimation x:Name="TeslaStyleUnChecked" Storyboard.TargetName="TeslaStyle_Dark_BallSlide"
+                                                        Storyboard.TargetProperty="RenderTransform.X"
+                                                        To="0"
+                                                        Duration="0:0:0.3" >
+                                    </DoubleAnimation>
+                                    <ColorAnimation x:Name="TeslaStyle_ToggleUnChecked_ColorAnimation" Storyboard.TargetName="TeslaStyle_Toggle_Rectangle"
+                                                    Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
+                                                    To="#FF292929"
+                                                    Duration="0:0:0.16" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TeslaToggle" x:Name="ButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter x:Name="ButtonStyle_Setter" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="ButtonStyle_ControlTemplate" TargetType="{x:Type ToggleButton}">
+                    <Canvas Name="TeslaToggle_Canvas" Width="105" Height="50">
+                        <Canvas.Resources>
+                            <RectangleGeometry x:Key="clip0" Rect="0,0 , 90, 40"/>
+                        </Canvas.Resources>
+                        <Canvas Name="TeslaToggle_Rectangle_Canvas" Height="37" Width="55">
+                            <Border Width="75" Height="39" CornerRadius="20" Name="TeslaToggle_Rectangle" Background="#FF292929" >
+
+                            </Border>
+                            <Canvas Name="g8" Height="41" Width="42">
+                                <Border Canvas.Left="3.5" Canvas.Top="3" Width="33" Height="33" CornerRadius="20" x:Name="TeslaToggle_Dark_BallSlide" Background="White">
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="1.2" BlurRadius="12" Color="#996D6D6D"/>
+                                    </Border.Effect>
+                                </Border>
+                            </Canvas>
+                        </Canvas>
+                    </Canvas>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger x:Name="ButtonStyleChecked_EventTrigger" RoutedEvent="Checked">
+                            <BeginStoryboard x:Name="ButtonStyleChecked_BeginStoryBoard">
+                                <Storyboard x:Name="ButtonStyleChecked_StoryBoard">
+                                    <DoubleAnimation x:Name="ButtonSyleChecked_ThicknessAnimation" Storyboard.TargetName="TeslaToggle_Dark_BallSlide"
+                                                        Storyboard.TargetProperty="(Canvas.Left)"
+                                                        To="39"
+                                                        Duration="0:0:0.16"/>
+                                    <ColorAnimation x:Name="ButtonStyleChecked_ColorAnimation" Storyboard.TargetName="TeslaToggle_Rectangle"
+                                                    Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
+                                                    To="DodgerBlue"
+                                                    Duration="0:0:0.16" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger x:Name="ButtonStyleUnchecked_EventTrigger" RoutedEvent="Unchecked">
+                            <BeginStoryboard x:Name="ButtonStyleUnChecked_BrginStoryBoard">
+                                <Storyboard x:Name="ButtonStyleUnChecked_StoryBoard">
+                                    <DoubleAnimation x:Name="ButtonSyleUnChecked_ThicknessAnimation" Storyboard.TargetName="TeslaToggle_Dark_BallSlide"
+                                                        Storyboard.TargetProperty="(Canvas.Left)"
+                                                        To="3.5"
+                                                        Duration="0:0:0.16" />
+                                    <ColorAnimation x:Name="ButtonStyleUnChecked_ColorAnimation" Storyboard.TargetName="TeslaToggle_Rectangle"
+                                                    Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
+                                                    To="#FF292929"
+                                                    Duration="0:0:0.16" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="DesignToggle" x:Key="SimpleToggleButton" TargetType="{x:Type CheckBox}">
+        <Setter x:Name="DesignToggle_Template" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="DesignToggle_ControlTemplate" TargetType="{x:Type CheckBox}">
+                    <Viewbox x:Name="DesignToggle_ViewBox">
+                        <Border x:Name="DesignToggle_Border" CornerRadius="10"
+                                Background="#FFE2E2E2"
+                                Width="40" Height="20">
+                            <Border.Effect>
+                                <DropShadowEffect x:Name="DesignToggle_DropShaddow" ShadowDepth="0.5" Direction="0" Opacity="0.3" />
+                            </Border.Effect>
+                            <Ellipse x:Name="DesignToggle_Ellipse" Fill="#FF909090" Stretch="Uniform"
+                                 Margin="-8 -4"
+                                 Stroke="Gray" StrokeThickness="0.2"
+                                 HorizontalAlignment="Stretch">
+                                <Ellipse.Effect>
+                                    <DropShadowEffect x:Name="DesignToggleEllipse_DropShaddow" BlurRadius="10" ShadowDepth="1" 
+                                                  Opacity="0.3" Direction="260" />
+                                </Ellipse.Effect>
+                            </Ellipse>
+                        </Border>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger x:Name="DesignToggleChecked_EventTrigger" RoutedEvent="Checked">
+                            <BeginStoryboard x:Name="DesignToggleChecked_BeginStoryBoard">
+                                <Storyboard x:Name="DesignToggleChecked_StoryBoard">
+                                    <ColorAnimation x:Name="DesignToggleChecked_ColorAnimation" Storyboard.TargetName="DesignToggle_Ellipse"
+                                                    Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)"
+                                                    To="#FF0069F3"
+                                                    Duration="0:0:0.05"
+                                                    AccelerationRatio="0.7"
+                                                    DecelerationRatio="0.3"/>
+                                    <ThicknessAnimation x:Name="DesignToggleChecked_ThicknessAnimation" Storyboard.TargetName="DesignToggle_Ellipse"
+                                                    Storyboard.TargetProperty="Margin"
+                                                    To="20 -4 -8 -4"
+                                                    Duration="0:0:0.15" 
+                                                    AccelerationRatio="0.7"
+                                                    DecelerationRatio="0.3"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger x:Name="DesignToggleUnChecked_EventTrigger" RoutedEvent="Unchecked">
+                            <BeginStoryboard x:Name="DesignToggleUnChecked_BeginStooryBoard">
+                                <Storyboard x:Name="DesignToggleUnChecked_StoryBoard">
+                                    <ColorAnimation x:Name="DesignToggleUnChecked_ColorAnimation" Storyboard.TargetName="DesignToggle_Ellipse"
+                                                    Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)"
+                                                    To="#FF909090"
+                                                    Duration="0:0:0.05" 
+                                                    AccelerationRatio="0.7"
+                                                    DecelerationRatio="0.3"/>
+                                    <ThicknessAnimation x:Name="DesignToggleUnChecked_ThicknessAnimation" Storyboard.TargetName="DesignToggle_Ellipse"
+                                                    Storyboard.TargetProperty="Margin"
+                                                    To="-8 -4"
+                                                    Duration="0:0:0.15"
+                                                    AccelerationRatio="0.7"
+                                                    DecelerationRatio="0.3"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="TeslaPanelToggleButton" x:Key="TeslaPanelToggleButton"
+           BasedOn="{StaticResource {x:Type ToggleButton}}"
+           TargetType="{x:Type RadioButton}">
+        <Setter x:Name="TeslaPanelButton_Dark_Setter" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="TeslaPanelButton_Dark_ControlTemplate"
+                                 TargetType="{x:Type RadioButton}">
+                    <Viewbox x:Name="TeslaPanelButton_Dark_ViewBox">
+                        <Grid x:Name="TeslaPanelButton_Dark_Border" Background="Transparent" Width="191" Height="45">
+                            <TextBlock Text="{TemplateBinding Property=Content}"
+                                       VerticalAlignment="Center"
+                                       FontFamily="/Fonts/#Montserrat"
+                                       Margin="120,0,0,0"
+                                       />
+                        </Grid>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger x:Name="TeslaPanelButton_Dark_Checked_EventTrigger" RoutedEvent="Checked">
+                            <BeginStoryboard x:Name="TeslaPanelButton_Dark_Checked_BeginStoryboard">
+                                <Storyboard x:Name="TeslaPanelButton_Dark_Checked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaPanelButton_Dark_ColorAnimation" Storyboard.TargetName="TeslaPanelButton_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#4C0079FF"
+                                                    Duration="0:0:00.35" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger x:Name="TeslaPanelButton_Dark_EventTrigger" RoutedEvent="Unchecked">
+                            <BeginStoryboard x:Name="TeslaPanelButton_Dark_UnChecked_BeginStoryBoard">
+                                <Storyboard x:Name="TeslaPanelButton_Dark_UnChecked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaPanelButton_Dark_UnChecked_ColorAnimation" Storyboard.TargetName="TeslaPanelButton_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="Transparent"
+                                                    Duration="0:0:00.35" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="TeslaButton" x:Key="TeslaButton" TargetType="{x:Type ToggleButton}">
+        <Setter x:Name="TeslaButton_Setter" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="TeslaButton_ControlTemplate" TargetType="{x:Type ToggleButton}">
+                    <Viewbox x:Name="TeslaButton_ViewBox">
+                        <Border Background="#FF111111" BorderThickness=".6" x:Name="TeslaButton_Border" CornerRadius="10" Width="75" Height="20" BorderBrush="#FF6A6A6A" />
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger x:Name="TeslaButtonChecked_EventTrigger" RoutedEvent="Checked">
+                            <BeginStoryboard x:Name="TeslaButtonChecked_BeginStoryboard">
+                                <Storyboard x:Name="TeslaButtonChecked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaButtonChecked_ColorAnimation" Storyboard.TargetName="TeslaButton_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="DodgerBlue"
+                                                    Duration="0:0:0.1" />
+                                    <ThicknessAnimation x:Name="TeslaButtonChecked_ThicknessAnimation" Storyboard.TargetName="TeslaButton_Border"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To=".2 .2 .2 .2"
+                                                        Duration="0:0:0.1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger x:Name="TeslaButtonUnChecked_EventTrigger" RoutedEvent="Unchecked">
+                            <BeginStoryboard x:Name="TeslaButtonUnChecked_BeginStoryBoard">
+                                <Storyboard x:Name="TeslaButtonUnChecked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaButtonUnChecked_ColorAnimation" Storyboard.TargetName="TeslaButton_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#FF111111"
+                                                    Duration="0:0:0.1" />
+                                    <ThicknessAnimation x:Name="TeslaButtonUnChecked_ThicknessAnimation" Storyboard.TargetName="TeslaButton_Border"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="0 0 0 0"
+                                                        Duration="0:0:0.1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="SafetyData_Button" x:Key="SafetyData_Button" TargetType="{x:Type Button}">
+        <Setter x:Name="SafetyData_Button_Dark_Setter" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="SafetyData_Button_Dark_ControlTemplate" TargetType="{x:Type Button}">
+                    <Viewbox x:Name="SafetyData_Button_Dark_ViewBox">
+                        <Border x:Name="SafetyData_Button_Dark_Border" CornerRadius="10" Height="261" Width="356">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill" ImageSource="/Tesla Demo;component/Resources/safedark.png" />
+                            </Border.Background>
+                        </Border>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="ImageNotif_Button" x:Key="ImageNotif_Button" TargetType="{x:Type Button}">
+        <Setter x:Name="ImageNotif_Button_Dark_Setter" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="ImageNotif_Button_Dark_ControlTemplate" TargetType="{x:Type Button}">
+                    <Viewbox x:Name="ImageNotif_Button_Dark_ViewBox">
+                        <Border x:Name="ImageNotif_Button_Dark_Border" CornerRadius="56" Height="101" Width="363">
+                            <Border.Background>
+                                <ImageBrush Stretch="UniformToFill" ImageSource="/Tesla Demo;component/Resources/widetesla.png" />
+                            </Border.Background>
+                        </Border>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="TeslaButtonBlue" x:Key="TeslaButtonBlue" TargetType="{x:Type Button}">
+        <Setter x:Name="TeslaButtonBlue_Dark_Setter" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="TeslaButtonBlue_Dark_ControlTemplate" TargetType="{x:Type Button}">
+                    <Viewbox x:Name="TeslaButtonBlue_Dark_ViewBox">
+                        <Border Background="#FF111111" BorderThickness=".6" x:Name="TeslaButtonBlue_Dark_Border" CornerRadius="10" Width="75" Height="20" BorderBrush="#FF6A6A6A">
+                            <Ellipse x:Name="TeslaButtonBlue_Dark_Ellipse" Fill="Black" Stretch="Uniform" Margin="2 1 2 1" Stroke="{x:Null}" StrokeThickness="0.2" HorizontalAlignment="Stretch" Opacity="0" />
+                        </Border>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger x:Name="TeslaButtonBlue_Dark_Checked_EventTrigger" RoutedEvent="PreviewMouseDown">
+                            <BeginStoryboard x:Name="TeslaButtonBlue_Dark_Checked_BeginStoryboard">
+                                <Storyboard x:Name="TeslaButtonBlue_Dark_Checked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaButtonBlue_Dark_ColorAnimation" Storyboard.TargetName="TeslaButtonBlue_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="DodgerBlue"
+                                                    Duration="0:0:0.1" />
+                                    <ThicknessAnimation x:Name="TeslaButtonBlue_Dark_Checked_ThicknessAnimation" Storyboard.TargetName="TeslaButtonBlue_Dark_Ellipse"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="20 1 2 1"
+                                                        Duration="0:0:0.1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger x:Name="TeslaButtonBlue_Dark_EventTrigger" RoutedEvent="PreviewMouseUp">
+                            <BeginStoryboard x:Name="TeslaButtonBlue_Dark_UnChecked_BeginStoryBoard">
+                                <Storyboard x:Name="TeslaButtonBlue_Dark_UnChecked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaButtonBlue_Dark_UnChecked_ColorAnimation" Storyboard.TargetName="TeslaButtonBlue_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#FF111111"
+                                                    Duration="0:0:0.05" />
+                                    <ThicknessAnimation x:Name="TeslaButtonBlue_Dark_UnChecked_ThicknessAnimation" Storyboard.TargetName="TeslaButtonBlue_Dark_Ellipse"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="2 1 2 1"
+                                                        Duration="0:0:0.05" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="TeslaButtonRed" x:Key="TeslaButtonRed" TargetType="{x:Type Button}">
+        <Setter x:Name="TeslaButtonRed_Dark_Setter" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="TeslaButtonRed_Dark_ControlTemplate" TargetType="{x:Type Button}">
+                    <Viewbox x:Name="TeslaButtonRed_Dark_ViewBox">
+                        <Border Background="#FF111111" BorderThickness=".6" x:Name="TeslaButtonRed_Dark_Border" CornerRadius="10" Width="75" Height="20" BorderBrush="#FF6A6A6A">
+                            <Ellipse x:Name="TeslaButtonRed_Dark_Ellipse" Fill="Black" Stretch="Uniform" Margin="2 1 2 1" Stroke="{x:Null}" StrokeThickness="0.2" HorizontalAlignment="Stretch" Opacity="0" />
+                        </Border>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger x:Name="TeslaButtonRed_Dark_Checked_EventTrigger" RoutedEvent="PreviewMouseDown">
+                            <BeginStoryboard x:Name="TeslaButtonRed_Dark_Checked_BeginStoryboard">
+                                <Storyboard x:Name="TeslaButtonRed_Dark_Checked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaButtonRed_Dark_ColorAnimation" Storyboard.TargetName="TeslaButtonRed_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#FFFF1818"
+                                                    Duration="0:0:0.1" />
+                                    <ThicknessAnimation x:Name="TeslaButtonRed_Dark_Checked_ThicknessAnimation" Storyboard.TargetName="TeslaButtonRed_Dark_Ellipse"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="20 1 2 1"
+                                                        Duration="0:0:0.1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger x:Name="TeslaButtonRed_Dark_EventTrigger" RoutedEvent="PreviewMouseUp">
+                            <BeginStoryboard x:Name="TeslaButtonRed_Dark_UnChecked_BeginStoryBoard">
+                                <Storyboard x:Name="TeslaButtonRed_Dark_UnChecked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaButtonRed_Dark_UnChecked_ColorAnimation" Storyboard.TargetName="TeslaButtonRed_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#FF111111"
+                                                    Duration="0:0:0.05" />
+                                    <ThicknessAnimation x:Name="TeslaButtonRed_Dark_UnChecked_ThicknessAnimation" Storyboard.TargetName="TeslaButtonRed_Dark_Ellipse"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="2 1 2 1"
+                                                        Duration="0:0:0.05" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="TeslaButtonGreen" x:Key="TeslaButtonGreen" TargetType="{x:Type Button}">
+        <Setter x:Name="TeslaButtonGreen_Dark_Setter" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="TeslaButtonGreen_Dark_ControlTemplate" TargetType="{x:Type Button}">
+                    <Viewbox x:Name="TeslaButtonGreen_Dark_ViewBox">
+                        <Border Background="#FF111111" BorderThickness=".6" x:Name="TeslaButtonGreen_Dark_Border" CornerRadius="10" Width="75" Height="20" BorderBrush="#FF6A6A6A">
+                            <Ellipse x:Name="TeslaButtonGreen_Dark_Ellipse" Fill="Black" Stretch="Uniform" Margin="2 1 2 1" Stroke="{x:Null}" StrokeThickness="0.2" HorizontalAlignment="Stretch" Opacity="0" />
+                        </Border>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger x:Name="TeslaButtonGreen_Dark_Checked_EventTrigger" RoutedEvent="PreviewMouseDown">
+                            <BeginStoryboard x:Name="TeslaButtonGreen_Dark_Checked_BeginStoryboard">
+                                <Storyboard x:Name="TeslaButtonGreen_Dark_Checked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaButtonGreen_Dark_ColorAnimation" Storyboard.TargetName="TeslaButtonGreen_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#FF45CE34"
+                                                    Duration="0:0:0.1" />
+                                    <ThicknessAnimation x:Name="TeslaButtonGreen_Dark_Checked_ThicknessAnimation" Storyboard.TargetName="TeslaButtonGreen_Dark_Ellipse"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="20 1 2 1"
+                                                        Duration="0:0:0.1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger x:Name="TeslaButtonGreen_Dark_EventTrigger" RoutedEvent="PreviewMouseUp">
+                            <BeginStoryboard x:Name="TeslaButtonGreen_Button_Dark_UnChecked_BeginStoryBoard">
+                                <Storyboard x:Name="TeslaButtonGreen_Button_Dark_UnChecked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaButtonGreen_Dark_UnChecked_ColorAnimation" Storyboard.TargetName="TeslaButtonGreen_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#FF111111"
+                                                    Duration="0:0:0.05" />
+                                    <ThicknessAnimation x:Name="TeslaButtonGreen_Dark_UnChecked_ThicknessAnimation" Storyboard.TargetName="TeslaButtonGreen_Dark_Ellipse"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="2 1 2 1"
+                                                        Duration="0:0:0.05" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="TeslaBox_Button" x:Key="TeslaBox_Button" TargetType="{x:Type Button}">
+        <Setter x:Name="TeslaBox_Button_Dark_Setter" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="TeslaBox_Button_Dark_ControlTemplate" TargetType="{x:Type Button}">
+                    <Viewbox x:Name="TeslaBox_Button_Dark_ViewBox">
+                        <Border x:Name="TeslaBox_Button_Dark_Border" CornerRadius="21" Background="#FF242424" Width="154" Height="154">
+                            <Ellipse x:Name="TeslaBox_Button_Dark_Ellipse" Fill="Black" Stretch="Uniform" Margin="2 1 2 1" Stroke="{x:Null}" StrokeThickness="0.2" HorizontalAlignment="Stretch" Opacity="0" />
+                        </Border>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger x:Name="TeslaBox_Button_Dark_Checked_EventTrigger" RoutedEvent="PreviewMouseDown">
+                            <BeginStoryboard x:Name="TeslaBox_Button_Dark_Checked_BeginStoryboard">
+                                <Storyboard x:Name="TeslaBox_Button_Dark_Checked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaBox_Button_Dark_ColorAnimation" Storyboard.TargetName="TeslaBox_Button_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="DodgerBlue"
+                                                    Duration="0:0:0.25" />
+                                    <ThicknessAnimation x:Name="TeslaBox_Button_Dark_Checked_ThicknessAnimation" Storyboard.TargetName="TeslaBox_Button_Dark_Ellipse"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="20 1 2 1"
+                                                        Duration="0:0:0.25" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger x:Name="TeslaBox_Button_Dark_EventTrigger" RoutedEvent="PreviewMouseUp">
+                            <BeginStoryboard x:Name="TeslaBox_Button_Dark_UnChecked_BeginStoryBoard">
+                                <Storyboard x:Name="TeslaBox_Button_Dark_UnChecked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaBox_Button_Dark_UnChecked_ColorAnimation" Storyboard.TargetName="TeslaBox_Button_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#FF242424"
+                                                    Duration="0:0:0.1" />
+                                    <ThicknessAnimation x:Name="TeslaBox_Button_Dark_UnChecked_ThicknessAnimation" Storyboard.TargetName="TeslaBox_Button_Dark_Ellipse"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="2 1 2 1"
+                                                        Duration="0:0:0.1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="TeslaPopUp_Button" x:Key="TeslaPopUp_Button" TargetType="{x:Type Button}">
+        <Setter x:Name="TeslaPopUp_Button_Dark_Setter" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="TeslaPopUp_Button_Dark_ControlTemplate" TargetType="{x:Type Button}">
+                    <Viewbox x:Name="TeslaPopUp_Button_Dark_ViewBox">
+                        <Border x:Name="TeslaPopUp_Button_Dark_Border" CornerRadius="21" Background="#FF111111" Width="154" Height="154">
+                            <Ellipse x:Name="TeslaPopUp_Button_Dark_Ellipse" Fill="Black" Stretch="Uniform" Margin="2 1 2 1" Stroke="{x:Null}" StrokeThickness="0.2" HorizontalAlignment="Stretch" Opacity="0" />
+                        </Border>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger x:Name="TeslaPopUp_Button_Dark_Checked_EventTrigger" RoutedEvent="PreviewMouseDown">
+                            <BeginStoryboard x:Name="TeslaPopUp_Button_Dark_Checked_BeginStoryboard">
+                                <Storyboard x:Name="TeslaPopUp_Button_Dark_Checked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaPopUp_Button_Dark_ColorAnimation" Storyboard.TargetName="TeslaPopUp_Button_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="DodgerBlue"
+                                                    Duration="0:0:0.25" />
+                                    <ThicknessAnimation x:Name="TeslaPopUp_Button_Dark_Checked_ThicknessAnimation" Storyboard.TargetName="TeslaPopUp_Button_Dark_Ellipse"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="20 1 2 1"
+                                                        Duration="0:0:0.25" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger x:Name="TeslaPopUp_Button_Dark_EventTrigger" RoutedEvent="PreviewMouseUp">
+                            <BeginStoryboard x:Name="TeslaPopUp_Button_Dark_UnChecked_BeginStoryBoard">
+                                <Storyboard x:Name="TeslaPopUp_Button_Dark_UnChecked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaPopUp_Button_Dark_UnChecked_ColorAnimation" Storyboard.TargetName="TeslaPopUp_Button_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#FF111111"
+                                                    Duration="0:0:0.1" />
+                                    <ThicknessAnimation x:Name="TeslaPopUp_Button_Dark_UnChecked_ThicknessAnimation" Storyboard.TargetName="TeslaPopUp_Button_Dark_Ellipse"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="2 1 2 1"
+                                                        Duration="0:0:0.1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="BatteryProgress" x:Key="BatteryProgress" TargetType="{x:Type ProgressBar}">
+        <Setter Property="Foreground" Value="#7F9C9C9C"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ProgressBar}">
+                    <Grid Name="TemplateRoot" SnapsToDevicePixels="true">
+                        <Rectangle RadiusX="2" RadiusY="2" Fill="{TemplateBinding Background}"/>
+                        <Rectangle Name="PART_Track" Width="38" Margin="0"/>
+                        <Decorator x:Name="PART_Indicator" Width="38" HorizontalAlignment="Center" Margin="0, 0, 0, 0">
+                            <Grid Name="Foreground" VerticalAlignment="Center" Height="11">
+                                <Rectangle Height="11" Width="30" RadiusX="2" RadiusY="2" VerticalAlignment="Center" HorizontalAlignment="Center" Fill="{TemplateBinding Foreground}" Name="Indicator" >
+                                    <Rectangle.Effect>
+                                        <DropShadowEffect Color="#E5D9D9D9" ShadowDepth="2" BlurRadius="6"/>
+                                    </Rectangle.Effect>
+                                </Rectangle>
+                                <Grid Name="Animation" ClipToBounds="True">
+                                    <Border Name="PART_GlowRect" CornerRadius="25" Margin="0,0,0,0" HorizontalAlignment="Left" Background="{TemplateBinding Foreground}"/>
+                                </Grid>
+                                <Grid Name="Overlay">
+
+                                </Grid>
+                            </Grid>
+                        </Decorator>
+                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsIndeterminate" Value="true">
+                            <Setter TargetName="Indicator" Property="Fill" Value="Transparent" />
+                            <Setter TargetName="PART_GlowRect" Property="Width" Value="100" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation 
+                                        Storyboard.TargetName="PART_GlowRect"
+                                        Storyboard.TargetProperty="Margin"
+                                        From="-50,0,0,0"  To="400,0,0,0" Duration="0:0:2"
+                                        AutoReverse="True" RepeatBehavior="Forever" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Name="TeslaGlovebox" x:Key="TeslaGlovebox" TargetType="{x:Type Button}">
+        <Setter x:Name="TeslaGlovebox_Dark_Setter" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="TeslaGlovebox_Dark_ControlTemplate" TargetType="{x:Type Button}">
+                    <Viewbox x:Name="TeslaGlovebox_Dark_ViewBox">
+                        <Border BorderThickness=".6" x:Name="TeslaGlovebox_Dark_Border" CornerRadius="10" Background="Black" Width="75" Height="20" BorderBrush="#FF6B6B6B">
+                            <Ellipse x:Name="TeslaGlovebox_Dark_Ellipse" Fill="Black" Stretch="Uniform" Margin="2 1 2 1" Stroke="{x:Null}" StrokeThickness="0.2" HorizontalAlignment="Stretch" Opacity="0" />
+                        </Border>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger x:Name="TeslaGlovebox_Dark_Checked_EventTrigger" RoutedEvent="PreviewMouseDown">
+                            <BeginStoryboard x:Name="TeslaGlovebox_Dark_Checked_BeginStoryboard">
+                                <Storyboard x:Name="TeslaGlovebox_Dark_Checked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaGlovebox_Dark_MouseDown_ColorAnimation" Storyboard.TargetName="TeslaGlovebox_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#FF131313"
+                                                    Duration="0:0:0.1" />
+                                    <ThicknessAnimation x:Name="TeslaGlovebox_Dark_Checked_ThicknessAnimation" Storyboard.TargetName="TeslaGlovebox_Dark_Ellipse"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="20 1 2 1"
+                                                        Duration="0:0:0.1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger x:Name="TeslaGlovebox_Dark_EventTrigger" RoutedEvent="PreviewMouseUp">
+                            <BeginStoryboard x:Name="TeslaGlovebox_Dark_UnChecked_BeginStoryBoard">
+                                <Storyboard x:Name="TeslaGlovebox_Dark_UnChecked_StoryBoard">
+                                    <ColorAnimation x:Name="TeslaGlovebox_Dark_MouseUp_ColorAnimation" Storyboard.TargetName="TeslaGlovebox_Dark_Border"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="Black"
+                                                    Duration="0:0:0.1" />
+                                    <ThicknessAnimation x:Name="TeslaGlovebox_Dark_UnChecked_ThicknessAnimation" Storyboard.TargetName="TeslaGlovebox_Dark_Ellipse"
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="2 1 2 1"
+                                                        Duration="0:0:0.05" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Login_Button" TargetType="{x:Type Button}">
+        <Setter Property= "Background" Value="#0e0e0e"/>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Login_Dark_Border" BorderThickness="1" CornerRadius="10" BorderBrush="#FF838383">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="4" ShadowDepth="1" Color="#FF9C9C9C"/>
+                        </Border.Effect>
+                        <TextBlock x:Name="Login_Dark_TextBlock" TextAlignment="Center" Text="About" Foreground="#FFA7A7A7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-5,2" Width="59" Height="14" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="9"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Gray"/>
+                <Setter Property="Foreground" Value="Black" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="LookAtMe" TargetType="Button">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Frame}, Path=IsMouseOver}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Frame.Background).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.5"
+                                                 Value="#eb0004"/>
+                                <LinearColorKeyFrame KeyTime="0:0:1.0"
+                                                 Value="#ebdf00"/>
+                                <LinearColorKeyFrame KeyTime="0:0:1.5"
+                                                 Value="#22cf00"/>
+                                <LinearColorKeyFrame KeyTime="0:0:2.0"
+                                                 Value="#00c8cf"/>
+                                <LinearColorKeyFrame KeyTime="0:0:2.5"
+                                                 Value="#a900cf"/>
+                                <LinearColorKeyFrame KeyTime="0:0:3.0"
+                                                 Value="#eb0004"/>
+                                <LinearColorKeyFrame KeyTime="0:0:3.5"
+                                                 Value="#ebdf00"/>
+                                <LinearColorKeyFrame KeyTime="0:0:4.0"
+                                                 Value="#22cf00"/>
+                                <LinearColorKeyFrame KeyTime="0:0:4.5"
+                                                 Value="#00c8cf"/>
+                                <LinearColorKeyFrame KeyTime="0:0:5.0"
+                                                 Value="#a900cf"/>
+                                <LinearColorKeyFrame KeyTime="0:0:5.5"
+                                                 Value="Black"/>
+
+
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Frame.Background).(SolidColorBrush.Color)">
+                                <LinearColorKeyFrame KeyTime="0:0:0.2"
+                                                 Value="White"/>
+                                <LinearColorKeyFrame KeyTime="0:0:0.5"
+                                                 Value="Black"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

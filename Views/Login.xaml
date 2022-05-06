@@ -1,0 +1,49 @@
+﻿<UserControl 
+      x:Class="Tesla_Demo.Views.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+      xmlns:Views="clr-namespace:Tesla_Demo.Views"
+      x:Name="Login_UserControl"
+      mc:Ignorable="d" 
+      Width="487" Height="711">
+    <Grid x:Name="Login_Grid" Width="487" Height="711">
+        <Border Style="{DynamicResource ThemeControl_Card_Border}" IsHitTestVisible="false"  CornerRadius="21" Margin="69,52,69,281">
+            <Border.Effect>
+                <DropShadowEffect Color="#7FAAAAAA" Direction="268" BlurRadius="14" ShadowDepth="3" Opacity="0.2"/>
+            </Border.Effect>
+        </Border>
+        <Path x:Name="Tesla_Name" Fill="DodgerBlue" StrokeThickness=".1" Stroke="DodgerBlue" Height="110.07" Stretch="Fill" Width="107.182" Margin="190.204,74.5,189.614,0" VerticalAlignment="Top" HorizontalAlignment="Center" >
+            <Path.Effect>
+                <DropShadowEffect ShadowDepth="1" Color="#4BB9B9B9" Direction="331" Opacity="0.5"/>
+            </Path.Effect>
+            <Path.Data>
+                <PathGeometry Figures="M233.275 37.4246C193.253 19.906 154.157 14.3372 120 14.5996H119.995C85.8374 14.3372 46.7349 19.906 6.71973 37.4246C1.95166 28.7456 0 23.4817 0 23.4817C43.7451 6.09937 84.7153 0.14917 119.995 0C155.277 0.14917 196.25 6.09839 240 23.4817C240 23.4817 238.625 27.7551 233.275 37.4246ZM153.589 50.3599L120.013 240L86.167 50.3323C54.3779 50.355 44.2959 53.8794 42.8296 68.2661C42.8296 68.2661 21.3525 60.2268 10.5337 43.8994C52.7822 24.2356 95.2393 23.3479 95.2393 23.3479L119.987 53.6201L144.731 23.3525C144.731 23.3525 187.187 24.2395 229.441 43.9031C218.613 60.2307 197.145 68.2698 197.145 68.2698C195.687 53.8843 185.592 50.3599 153.589 50.3599Z"/>
+            </Path.Data>
+        </Path>
+        <Path x:Name="Instagram" Fill="DodgerBlue" StrokeThickness=".1" Stroke="DodgerBlue" Height="33" Stretch="Fill" Width="33.129" Margin="146.495,368.5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Path.Data>
+                <PathGeometry Figures="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </Path.Data>
+        </Path>
+        <Button Style="{DynamicResource HiddenButton}" Margin="145,367,306,308" Background="Transparent" Height="Auto" Click="Button_Click" Cursor="Arrow" BorderThickness="0,0,0,0" />
+        <Path x:Name="FaceBook" Fill="DodgerBlue" StrokeThickness="0" Stroke="DodgerBlue" Height="32" Stretch="Fill" Width="18.526" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="234.458,369.5,234.016,0">
+            <Path.Data>
+                <PathGeometry Figures="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+            </Path.Data>
+        </Path>
+        <Button Style="{DynamicResource HiddenButton}" Margin="227,368,224,307" BorderThickness="0,0,0,0" Background="Transparent" Height="Auto" Click="Button_Click_1" Cursor="Arrow" />
+        <Path x:Name="Twitter" IsHitTestVisible="False" Fill="DodgerBlue" StrokeThickness="0" Stroke="DodgerBlue" Height="31.5" Stretch="Fill" Width="34.815" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="305.563,369.75,0,0">
+            <Path.Data>
+                <PathGeometry Figures="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+            </Path.Data>
+        </Path>
+        <Button Style="{DynamicResource HiddenButton}" Margin="305,368,146,307" BorderThickness="0,0,0,0" Background="Transparent" Height="36" Click="Button_Click_2" Cursor="Arrow" Width="36" />
+        <TextBlock Style="{DynamicResource ResourceKey=ThemeControl_Invert_LoginTextBlock}" x:Name="Intro" TextAlignment="Center" Margin="94,198,93,402" Cursor="Arrow" Padding="0,0,0,3" FontFamily="Segoe UI Semibold" HorizontalAlignment="Center" Width="300" TextWrapping="WrapWithOverflow" FontSize="13.5" ><Run Text="My name is Sam, thank you for taking a look at my project, in part with my final assignment. "/><LineBreak/><Run/><LineBreak/><Run Text="Please navigate around by clicking the left panel buttons. Information can be found in each tab to better inform you on Self-Driving vehicles."/></TextBlock>
+        <TextBlock Style="{DynamicResource ThemeControl_Invert_LoginTextBlock}" x:Name="Social" TextAlignment="Center" Margin="94,328,93,369" FontSize="11" Cursor="Arrow" Padding="0,0,0,3" FontFamily="Segoe UI Semibold" HorizontalAlignment="Center" Width="300" TextWrapping="WrapWithOverflow" Text="Follow my socials, and please reach out with any Questions!" />
+
+
+    </Grid>
+</UserControl>
