@@ -57,7 +57,7 @@
 
 ## Table of Contents
 - [Features](#features)
-- [Example](#example)
+- [Example](#examples)
 - [Optimizations](#optimizations)
 - [FAQ](#faq)
 - [Installation](#installation)
@@ -71,8 +71,13 @@
 - __MAUI:__ should be fairly portable to .NET MAUI, whenever Microsoft decides to release this IDE feature in full...
 - __Tesla Related:__ enjoy a Tesla like experience.
 
-## Example
+## Examples
 ![Familiar Design and Feel](https://i.imgur.com/viJSzW5.gif)
+<br />
+## Design that fits
+![Completely Custom Light & Dark Mode](https://i.imgur.com/9yTz0Ap.png)
+&nbsp;&nbsp;&nbsp;&nbsp;
+![Completely Custom Light & Dark Mode](https://i.imgur.com/gimKuBs.png)
 <br />
 Want to see more? Check out the [Initial Release](https://github.com/computesam/Tesla-Demo/releases/tag/v1.0.0-Release).
 
