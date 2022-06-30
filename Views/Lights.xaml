@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="Tesla_Demo.Views.Lights"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tesla_Demo.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="711" d:DesignWidth="487">
+    <Grid x:Name="LightsContent_Grid">
+        <StackPanel x:Name="Lights_StackPanel" Margin="0,21,0,0" Height="669" VerticalAlignment="Top">
+            <StackPanel x:Name="LightsLabel_StackPanel" Margin="45,1,308,1" Height="25">
+                <Canvas x:Name="LightsPaths_Canvas" Height="21" Margin="8,0,0,0">
+                    <Path Style="{DynamicResource ThemeControl_Invert_Path}" x:Name="AutoPilot_Icon" StrokeThickness="0"  Data="M39 24C39 32.2843 32.2843 39 24 39C15.7157 39 9 32.2843 9 24C9 15.7157 15.7157 9 24 9C32.2843 9 39 15.7157 39 24ZM11.8972 26.0466C18.5166 26.1372 21.5814 31.5185 21.9223 36.0976C16.7988 35.2239 12.758 31.1745 11.8972 26.0466ZM11.8022 22.6364H14.7955C15.9695 22.6364 16.9541 22.2573 18.0755 21.8255C19.559 21.2543 21.2819 20.5909 24 20.5909C26.7181 20.5909 28.441 21.2543 29.9245 21.8255C31.0459 22.2573 32.0305 22.6364 33.2045 22.6364H36.1978C35.5195 16.5001 30.3171 11.7273 24 11.7273C17.6829 11.7273 12.4805 16.5001 11.8022 22.6364ZM26.0777 36.0976C26.4186 31.5185 29.4834 26.1372 36.1028 26.0466C35.242 31.1745 31.2012 35.2239 26.0777 36.0976Z" Height="17.624" Canvas.Left="2.531" Stretch="Fill" Canvas.Top="1.625" Width="17.624"/>
+                    <TextBlock x:Name="Lights_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="/Fonts/#Montserrat" FontWeight="Bold" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontSize="13.5" Text="Self Driving" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="37" Canvas.Top="2" />
+                </Canvas>
+            </StackPanel>
+            <StackPanel x:Name="LightsBoxes_StackPanel" Height="438" VerticalAlignment="Center" Margin="55,0,56,0">
+                <Canvas x:Name="LightssBox_Canvas" Height="427" Width="376" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Rectangle Style="{DynamicResource ThemeControl_Element_Rectangle}" Width="377" Height="427" RadiusX="25" RadiusY="25" x:Name="Lights_Rectangle"/>
+                    <TextBlock x:Name="Lights_Paragraph" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" Text="Getting into the nitty-gritty of self driving requires some terminology understanding! Tesla takes a vision only approach. This means the cameras on the vehicle are the eyes of the vehicle! This makes sense, considering us as humans also use our eyes to drive. So how do the cameras understand everything in their surroundings? What is referred to as a Neural Network allows the cameras to read the visual data from the camera feed alone. Essentially, the Neural Network is providing the deep understanding for what the vehicle sees and acts based upon this. There are more technical terms like HydraNet and VoxelNet, which allow a deeper depth understanding of 3D objects in viewable space, and allow more than human accurate predictions and understanding for where the objects are; measuring the distance. This is important at intersections and other cross traffic scenarios, so the vehicle has a strong ability to view the velocity of oncoming traffic and confidently move through (or lack there of) based on the birds eye view it has created! Essentially, this eliminates the need for LiDAR." FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="13.5" Height="356" Canvas.Left="18" Canvas.Top="16" Width="341" TextWrapping="WrapWithOverflow"/>
+                    <Button x:Name="Confused_Button" Style="{DynamicResource TeslaButtonBlue}" Canvas.Left="206" Canvas.Top="367" Height="51" Width="153" Click="Confused_Button_Click" />
+                    <Button x:Name="Understand_Button" Style="{DynamicResource TeslaButtonGreen}" Canvas.Left="20" Canvas.Top="368" Height="50" Width="153" Click="Understand_Button_Click" />
+                    <TextBlock x:Name="Understand_Button_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" Canvas.Left="64" Canvas.Top="386" Height="16" ><Run Text="Interesting"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock x:Name="MoreInfo_Button_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" Text="More Info" Canvas.Left="252" Canvas.Top="386" Height="16" />
+                </Canvas>
+            </StackPanel>
+            <Canvas Height="184" RenderTransformOrigin="0.5,0.5">
+                <Button Style="{DynamicResource TeslaBox_Button}" Canvas.Left="55" Canvas.Top="1" Width="182" Height="182" x:Name="VoxelNetBox" Click="VoxelNetBox_Click"/>
+                <Image Source="/Resources/voxelnet.png" IsHitTestVisible="False" Height="131" Width="168" Canvas.Left="61" Canvas.Top="7" />
+                <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" Text="Voxel Net" IsHitTestVisible="False" FontFamily="/Fonts/#Montserrat" FontWeight="Bold" FontStretch="Expanded" FontSize="13" Height="14" Canvas.Left="114" Canvas.Top="151" Width="67" TextWrapping="NoWrap" TextAlignment="Center"/>
+                <Button Style="{DynamicResource TeslaBox_Button}" Canvas.Left="250" Canvas.Top="1" Width="182" Height="182" x:Name="NeuralNetBox" Click="NeuralNetBox_Click"/>
+                <Image Source="/Resources/neuralnet.png" IsHitTestVisible="False" Height="131" Width="159" Canvas.Left="265" Canvas.Top="13" />
+                <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" Text="Neural Net" IsHitTestVisible="False" FontFamily="/Fonts/#Montserrat" FontWeight="Bold" FontStretch="Expanded" FontSize="13" Height="14" Canvas.Left="307" Canvas.Top="151" Width="72" TextWrapping="NoWrap" TextAlignment="Center"/>
+            </Canvas>
+        </StackPanel>
+        <Grid x:Name="Understand_Popup" Visibility="Hidden" Background="#7F141414">
+            <Rectangle Style="{DynamicResource ThemeControl_Element_Rectangle}" Canvas.Left="56" Canvas.Top="8" RadiusX="25" RadiusY="25" x:Name="GoodPopUp" Margin="128,162,128,280"/>
+            <Image IsHitTestVisible="False" Source="/Resources/doge.png" Margin="172,268,186,310" />
+
+            <Button x:Name="LearnMore_ToggleButton" Style="{DynamicResource TeslaButtonBlue}" Margin="154,381,153,293" Click="LearnMore_Button_Click"/>
+            <TextBlock x:Name="Smart_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" Margin="218,392,0,0" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" Text="Continue" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" HorizontalAlignment="Left" VerticalAlignment="Top" Height="95" Canvas.Left="70" Canvas.Top="23" Width="197" TextWrapping="WrapWithOverflow" Margin="147,177,0,0" FontSize="13"><Run Text="Learn more by clicking on the &quot;More Info&quot; button."/><LineBreak/><Run/><LineBreak/><Run Text="From here, you can read more about this great technology!"/></TextBlock>
+        </Grid>
+        <Grid x:Name="Unclear_Popup" Visibility="Hidden" Background="#7F141414">
+            <Rectangle Style="{DynamicResource ThemeControl_Element_Rectangle}" Canvas.Left="56" Canvas.Top="8" RadiusX="25" RadiusY="25" x:Name="UnclearPopUp" Margin="65,59,64,51"/>
+            <Image IsHitTestVisible="False" Source="/Resources/doge.png" Margin="164,458,173,92" />
+            <Canvas Margin="0,71,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="335" Height="378">
+                <Button Style="{DynamicResource TeslaPopUp_Button}" Canvas.Left="6" Canvas.Top="4" Width="154" Height="154" x:Name="FSDHardware_Button" Click="FSDHardware_Button_Click"/>
+                <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" Text="FSD Hardware" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="13.5" Height="15" Canvas.Left="39" Canvas.Top="129" Width="89" TextWrapping="WrapWithOverflow"/>
+                <Image IsHitTestVisible="False" Source="/Resources/fsdchip.png" Height="70" Canvas.Left="18" Canvas.Top="14" Width="129" />
+
+                <Button Style="{DynamicResource TeslaPopUp_Button}" Canvas.Left="6" Canvas.Top="174" Width="154" Height="154" x:Name="DeepUnderstanding_Button" Click="DeepUnderstanding_Button_Click"/>
+                <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="13.5" Height="17" Canvas.Left="64" Canvas.Top="297" Width="43" TextWrapping="WrapWithOverflow" Text="AI Day"/>
+                <Image IsHitTestVisible="False" Source="/Resources/aiday.png" Height="29" Canvas.Left="18" Canvas.Top="193" Width="131" />
+
+                <Button Style="{DynamicResource TeslaPopUp_Button}" Canvas.Left="176" Canvas.Top="4" Width="154" Height="154" x:Name="FSDSoftware_Button" Click="FSDSoftware_Button_Click"/>
+                <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" Text="FSD Software" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="13.5" Height="15" Canvas.Left="212" Canvas.Top="129" Width="82" TextWrapping="WrapWithOverflow"/>
+                <Image Source="/Resources/fsd.png" IsHitTestVisible="False" Height="85" Canvas.Left="189" Canvas.Top="12" Width="127" />
+
+                <Button Style="{DynamicResource TeslaPopUp_Button}" Canvas.Left="177" Canvas.Top="174" Width="154" Height="154" x:Name="Tippp" Click="Tippp_Click"/>
+                <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" TextAlignment="Center" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="13.5" Height="127" Canvas.Left="195" Canvas.Top="190" Width="119" TextWrapping="WrapWithOverflow"><Run Text="If you are enjoying the experience and or have a better understanding of Self-Driving, please consider a Tip     ♥"/></TextBlock>
+
+            </Canvas>
+            <Button x:Name="UnClearPopUp_Button" Style="{DynamicResource TeslaButtonBlue}" Margin="165,595,161,73" Click="UnClearPopUp_Button_Click"/>
+            <TextBlock x:Name="Continue_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" Margin="219,609,0,0" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" Text="Continue" HorizontalAlignment="Left" VerticalAlignment="Top" Height="16" Width="57" />
+        </Grid>
+        <Grid x:Name="AIDay_PopUp" Visibility="Hidden" Background="#7F141414">
+            <Rectangle Style="{DynamicResource ThemeControl_Element_Rectangle}" Canvas.Left="56" Canvas.Top="8" RadiusX="25" RadiusY="25" x:Name="AIDay_Rect" Margin="128,162,128,280"/>
+            <Image IsHitTestVisible="False" Source="/Resources/aiday.png" Canvas.Left="18" Canvas.Top="193" Margin="161,178,161,496" />
+
+            <Button x:Name="AIDay_Part1_Button" Style="{DynamicResource TeslaButtonBlue}" Margin="143,224,250,457" Click="AIDay_Part1_Button_Click"/>
+            <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="10" Canvas.Left="212" Canvas.Top="129" TextWrapping="WrapWithOverflow" Margin="177,234,284,467"><Run Text="Part 1"/><LineBreak/><Run/></TextBlock>
+
+            <Button x:Name="AIDay_Part3_Button" Style="{DynamicResource TeslaButtonBlue}" Margin="143,258,250,424" Click="AIDay_Part3_Button_Click"/>
+            <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="10" Canvas.Left="212" Canvas.Top="129" TextWrapping="WrapWithOverflow" Margin="177,267,283,433"><Run Text="Part 3"/><LineBreak/><Run/></TextBlock>
+
+            <Button x:Name="AIDay_Part2_Button1" Style="{DynamicResource TeslaButtonBlue}" Margin="250,224,143,457" Click="AIDay_Part2_Button1_Click"/>
+            <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="10" Canvas.Left="212" Canvas.Top="129" TextWrapping="WrapWithOverflow" Margin="284,234,176,466"><Run Text="Part 2"/><LineBreak/><Run/></TextBlock>
+
+            <Button x:Name="AIDay_Part4_Button" Style="{DynamicResource TeslaButtonBlue}" Margin="250,257,143,424" Click="AIDay_Part4_Button_Click"/>
+            <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="10" Canvas.Left="212" Canvas.Top="129" TextWrapping="WrapWithOverflow" Margin="284,267,176,433"><Run Text="Part 4"/><LineBreak/><Run/></TextBlock>
+
+            <TextBlock x:Name="AIDay_Alot_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" TextAlignment="Center" FontFamily="Montserrat" Margin="143,300,0,0" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="64" Width="201" TextWrapping="WrapWithOverflow" ><Run Text="There is a lot to read and take in."/><LineBreak/><Run/><LineBreak/><Run Text="I recommend numeric order, based on the part number"/></TextBlock>
+            <Button x:Name="AIDay_Back_Button" Style="{DynamicResource TeslaButtonBlue}" Margin="173,379,172,295" Click="AIDay_Back_Button_Click"/>
+            <TextBlock x:Name="Back_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" Margin="230,390,0,0" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" Text="Back" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        </Grid>
+    </Grid>
+</UserControl>

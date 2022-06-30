@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="Tesla_Demo.Views.Safety"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tesla_Demo.Views"
+             mc:Ignorable="d"
+             x:Name="Safety_UserControl"
+             d:DesignHeight="711" d:DesignWidth="487">
+
+    <Grid>
+        <StackPanel x:Name="Safety_StackPanel" Height="665" VerticalAlignment="Top" Margin="0,21,0,0">
+            <StackPanel x:Name="SafetyLabel_StackPanel" Margin="45,1,307,1" Height="25">
+                <Canvas x:Name="SafetysPaths_Canvas" Height="21" Margin="8.125,0,-0.125,0">
+                    <Path x:Name="SafetyIcon_Path" Style="{DynamicResource ThemeControl_Invert_Path}" Data="M19 22H29V18C29 15.2386 26.7614 13 24 13C21.2386 13 19 15.2386 19 18V22ZM32 22C33.1046 22 34 22.8954 34 24V36C34 37.1046 33.1046 38 32 38H16C14.8954 38 14 37.1046 14 36V24C14 22.8954 14.8954 22 16 22V18C16 13.5817 19.5817 10 24 10C28.4183 10 32 13.5817 32 18V22Z" Height="17.001" Stretch="Fill" Width="13.334" Canvas.Left="5.25" Canvas.Top="1.583" StrokeThickness="0"/>
+                    <TextBlock x:Name="Safety_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="/Fonts/#Montserrat" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontSize="13.5" Text="Safety" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="37" Canvas.Top="2" FontWeight="Bold" />
+                </Canvas>
+            </StackPanel>
+            <StackPanel x:Name="SafetyBoxes_StackPanel" Height="373" Margin="55,0">
+                <Canvas x:Name="SafetyBox_Canvas" Height="360" Width="377" HorizontalAlignment="Left" >
+                    <Rectangle Style="{DynamicResource ThemeControl_Element_Rectangle}" Width="377" Height="356" RadiusX="25" RadiusY="25" x:Name="Safety_Rectangle"/>
+                    <Button Style="{DynamicResource SafetyData_Button}" Canvas.Left="-1" Canvas.Top="-12" Height="294" Width="379" />
+                    <Button x:Name="Safelol_Button" Style="{DynamicResource TeslaButtonGreen}" Canvas.Left="19" Canvas.Top="289" Height="58" Width="153" Click="Safelol_Button_Click" />
+                    <TextBlock x:Name="safelol_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" Text="Safe!" Canvas.Left="80" Canvas.Top="311" />
+                    <Button x:Name="idc_Button" Style="{DynamicResource TeslaButtonRed}" Canvas.Left="204" Canvas.Top="290" Height="56" Width="153" Click="idc_Button_Click" />
+                    <TextBlock x:Name="idc_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" Text="I Don't Care" Canvas.Left="244" Canvas.Top="311" />
+                    <Rectangle Style="{DynamicResource ThemeControl_Element_Rectangle}" Canvas.Top="371" Width="377" Height="250" RadiusX="25" RadiusY="25" x:Name="Safety_Text_Rectangle" />
+                    <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="13.5" Height="160" Canvas.Left="18" Canvas.Top="384" Width="341" TextWrapping="WrapWithOverflow" Text="Self-Driving needs to be safe. This is why Tesla has safety as their highest priority, beating out even the safest competitors like Volvo. Tesla has defined what the next generation of vehicle safety looks like. There is so many aspects that go into safety when a &quot;iPad on wheels&quot; is on the road. Competitors do not have the technological advancements to compete in the realm of safety. This advantage allows Tesla to better push out the &quot;Full Self Driving&quot; Beta. See more of how Tesla dominates Safety below."/>
+                    <Button x:Name="TeslaSafety_Button" Style="{DynamicResource TeslaButtonGreen}" Canvas.Left="19" Canvas.Top="556" Height="58" Width="153" Click="TeslaSafety_Button_Click" />
+                    <TextBlock x:Name="TeslaSafety_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" Text="Tesla Safety Demo" Canvas.Left="39" Canvas.Top="578" />
+                    <Button x:Name="Stilldontcare_Button" Style="{DynamicResource TeslaButtonRed}" Canvas.Left="204" Canvas.Top="557" Height="56" Width="153" Click="Stilldontcare_Button_Click" />
+                    <TextBlock x:Name="stilldontcare_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" Text="Still Don't Care" Canvas.Left="235" Canvas.Top="578" />
+                </Canvas>
+            </StackPanel>
+        </StackPanel>
+        <Grid x:Name="Safe_PopUp" Visibility="Hidden" Background="#7F141414">
+            <Rectangle Style="{DynamicResource ThemeControl_Element_Rectangle}" Canvas.Left="56" Canvas.Top="8" RadiusX="25" RadiusY="25" x:Name="Safe_PopUp_Rect" Margin="128,162,128,280"/>
+            <Image IsHitTestVisible="False" Source="/Resources/doge.png" Margin="193,294,196,315" />
+            <Button x:Name="Safe_Close_Button" Style="{DynamicResource TeslaButtonBlue}" Margin="165,381,164,293" Click="Safe_Close_Button_Click" />
+            <TextBlock x:Name="Safe_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" Margin="216,392,0,0" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" Text="Continue" HorizontalAlignment="Left" VerticalAlignment="Top" Height="16" />
+            <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" HorizontalAlignment="Left" VerticalAlignment="Top" Height="112" Canvas.Left="70" Canvas.Top="23" Width="197" TextWrapping="WrapWithOverflow" Margin="147,177,0,0" FontSize="13" Text="Awesome! Learn more by clicking the &quot;Tesla Safety Demo&quot; Button in this tab! There is a lot of visual learning when it comes to basic understanding of this technology, so I hope you find all of this useful &amp; fun!" />
+
+        </Grid>
+        <Grid x:Name="idc_PopUp" Visibility="Hidden" Background="#7F141414">
+            <Rectangle Style="{DynamicResource ThemeControl_Element_Rectangle}" Canvas.Left="56" Canvas.Top="8" RadiusX="25" RadiusY="25" x:Name="idc_PopUp_Rect" Margin="128,162,128,280"/>
+            <Button x:Name="idc_Close_Button" Style="{DynamicResource TeslaButtonBlue}" Margin="165,381,164,293" Click="idc_Close_Button_Click" />
+            <TextBlock x:Name="MoreData_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" Margin="239,389,0,0" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" Text="..." HorizontalAlignment="Left" VerticalAlignment="Top" Height="21" />
+            <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" HorizontalAlignment="Left" VerticalAlignment="Top" Height="190" Canvas.Left="70" Canvas.Top="23" Width="197" TextWrapping="WrapWithOverflow" Margin="147,177,0,0" FontSize="13"><Run Text="oh, cmon... Why are you still here lol. You just like clicking buttons at this point, don't you."/><LineBreak/><Run/><LineBreak/><Run Text="Well, I unfortunately have nothing to say. So maybe you will stop in spite of the boring context, but I doubt it."/></TextBlock>
+        </Grid>
+        <Grid x:Name="SafetyDemo_PopUp" Visibility="Hidden" Background="#7F141414">
+            <Rectangle Style="{DynamicResource ThemeControl_Element_Rectangle}" Canvas.Left="56" Canvas.Top="8" RadiusX="25" RadiusY="25" x:Name="UnclearPopUp" Margin="65,59,64,51"/>
+            <Image IsHitTestVisible="False" Source="/Resources/doge.png" Margin="164,458,173,92" />
+            <Canvas Margin="0,71,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="335" Height="378">
+                <Button Style="{DynamicResource TeslaPopUp_Button}" Canvas.Left="6" Canvas.Top="4" Width="154" Height="154" x:Name="SafetyDemo_Button" Click="SafetyDemo_Button_Click"/>
+                <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" Text="Safety Demo" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="13.5" Height="15" Canvas.Left="44" Canvas.Top="129" Width="79" TextWrapping="WrapWithOverflow"/>
+                <Path x:Name="Youtube_Logo_Safety" Fill="DodgerBlue" IsHitTestVisible="False" StrokeThickness=".1" Stroke="DodgerBlue" Height="52.76" Stretch="Fill" Width="73.772" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="46.614" Canvas.Top="27.5" >
+                    <Path.Effect>
+                        <DropShadowEffect ShadowDepth="1" Color="#4BB9B9B9" Direction="331" Opacity="0.5"/>
+                    </Path.Effect>
+                    <Path.Data>
+                        <PathGeometry Figures="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                    </Path.Data>
+                </Path>
+                <Button Style="{DynamicResource TeslaPopUp_Button}" Canvas.Left="6" Canvas.Top="174" Width="154" Height="154" x:Name="SafetyData_Button" Click="SafetyData_Button_Click"/>
+                <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="13.5" Height="17" Canvas.Left="47" Canvas.Top="297" Width="72" TextWrapping="WrapWithOverflow" Text="Safety Data"/>
+                <Path x:Name="Tesla_Logo_Safety" Fill="DodgerBlue" IsHitTestVisible="False" StrokeThickness=".1" Stroke="DodgerBlue" Height="74.76" Stretch="Fill" Width="73.772" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="46.614" Canvas.Top="196.5" >
+                    <Path.Effect>
+                        <DropShadowEffect ShadowDepth="1" Color="#4BB9B9B9" Direction="331" Opacity="0.5"/>
+                    </Path.Effect>
+                    <Path.Data>
+                        <PathGeometry Figures="M233.275 37.4246C193.253 19.906 154.157 14.3372 120 14.5996H119.995C85.8374 14.3372 46.7349 19.906 6.71973 37.4246C1.95166 28.7456 0 23.4817 0 23.4817C43.7451 6.09937 84.7153 0.14917 119.995 0C155.277 0.14917 196.25 6.09839 240 23.4817C240 23.4817 238.625 27.7551 233.275 37.4246ZM153.589 50.3599L120.013 240L86.167 50.3323C54.3779 50.355 44.2959 53.8794 42.8296 68.2661C42.8296 68.2661 21.3525 60.2268 10.5337 43.8994C52.7822 24.2356 95.2393 23.3479 95.2393 23.3479L119.987 53.6201L144.731 23.3525C144.731 23.3525 187.187 24.2395 229.441 43.9031C218.613 60.2307 197.145 68.2698 197.145 68.2698C195.687 53.8843 185.592 50.3599 153.589 50.3599Z"/>
+                    </Path.Data>
+                </Path>
+                <Button Style="{DynamicResource TeslaPopUp_Button}" Canvas.Left="176" Canvas.Top="4" Width="154" Height="154" x:Name="MoreSafety_Button" Click="MoreSafety_Button_Click"/>
+                <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" Text="More Safety" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="13.5" Height="15" Canvas.Left="216" Canvas.Top="129" Width="75" TextWrapping="WrapWithOverflow"/>
+                <Path x:Name="Wheel_Logo_Safety" Fill="DodgerBlue" IsHitTestVisible="False" StrokeThickness=".1" Stroke="DodgerBlue" Height="58.76" Stretch="Fill" Width="60.272" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="223.614" Canvas.Top="24.5" >
+                    <Path.Effect>
+                        <DropShadowEffect ShadowDepth="1" Color="#4BB9B9B9" Direction="331" Opacity="0.5"/>
+                    </Path.Effect>
+                    <Path.Data>
+                        <PathGeometry Figures="M39 24C39 32.2843 32.2843 39 24 39C15.7157 39 9 32.2843 9 24C9 15.7157 15.7157 9 24 9C32.2843 9 39 15.7157 39 24ZM11.8972 26.0466C18.5166 26.1372 21.5814 31.5185 21.9223 36.0976C16.7988 35.2239 12.758 31.1745 11.8972 26.0466ZM11.8022 22.6364H14.7955C15.9695 22.6364 16.9541 22.2573 18.0755 21.8255C19.559 21.2543 21.2819 20.5909 24 20.5909C26.7181 20.5909 28.441 21.2543 29.9245 21.8255C31.0459 22.2573 32.0305 22.6364 33.2045 22.6364H36.1978C35.5195 16.5001 30.3171 11.7273 24 11.7273C17.6829 11.7273 12.4805 16.5001 11.8022 22.6364ZM26.0777 36.0976C26.4186 31.5185 29.4834 26.1372 36.1028 26.0466C35.242 31.1745 31.2012 35.2239 26.0777 36.0976Z"/>
+                    </Path.Data>
+                </Path>
+                <Button Style="{DynamicResource TeslaPopUp_Button}" Canvas.Left="177" Canvas.Top="174" Width="154" Height="154" x:Name="ProbablyWontClick_Button" Click="ProbablyWontClick_Button_Click"/>
+                <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" TextAlignment="Center" Text="Whether or not you are going to accept this information is up to you." FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" FontSize="13.5" Height="90" Canvas.Left="198" Canvas.Top="204" Width="111" TextWrapping="WrapWithOverflow"/>
+            </Canvas>
+            <Button x:Name="SafetyDemoClear_PopUp_Button" Style="{DynamicResource TeslaButtonBlue}" Margin="165,595,161,73" Click="SafetyDemoClear_PopUp_Button_Click"/>
+            <TextBlock x:Name="Continue_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" FontFamily="Montserrat" Margin="219,609,0,0" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" FontSize="13.5" Text="Continue" HorizontalAlignment="Left" VerticalAlignment="Top" Height="16" Width="57" />
+        </Grid>
+        <Grid x:Name="Funny_PopUp" Visibility="Hidden" Background="#7F141414">
+            <Rectangle Style="{DynamicResource ThemeControl_Element_Rectangle}" Canvas.Left="56" Canvas.Top="8" RadiusX="25" RadiusY="25" x:Name="Funny_PopUp_Rect" Margin="128,162,128,280"/>
+            <Button x:Name="Funny_Close_Button" Style="{DynamicResource TeslaButtonBlue}" Margin="165,381,164,293" Click="Funny_Close_Button_Click" />
+            <TextBlock x:Name="Funny_Text" Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" TextAlignment="Center" FontFamily="Montserrat" Margin="190,387,0,0" FontStretch="Expanded" TextOptions.TextHintingMode="Fixed" FontWeight="Medium" Text="Yes, You have to click this button now" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" TextWrapping="WrapWithOverflow" Width="109" FontSize="11" />
+            <TextBlock Style="{DynamicResource ThemeControl_Invert_TextBlock}" IsHitTestVisible="False" TextAlignment="Center" FontFamily="Montserrat" FontStretch="Expanded" FontWeight="Medium" HorizontalAlignment="Left" VerticalAlignment="Top" Height="146" Canvas.Left="70" Canvas.Top="23" Width="197" TextWrapping="WrapWithOverflow" Margin="147,197,0,0" FontSize="13"><Run Text="You think you're funny..."/><LineBreak/><Run/><LineBreak/><Run Text="Alright. Fine... you win."/><LineBreak/><Run/><LineBreak/><Run Text="..."/><LineBreak/><Run/><LineBreak/><Run Text="..."/><LineBreak/><Run/><LineBreak/><Run Text="Goodbye"/></TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>
